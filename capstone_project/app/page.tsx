@@ -1,113 +1,109 @@
-import Image from 'next/image'
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div className="flex flex-col min-h-screen">
+      {/* ... (head, main content) */}
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      {/* Header component with navigation links */}
+      <header className="bg-gray-800 text-white p-4 fixed w-full z-10">
+        <nav className="flex justify-around">
+          <Link href="/game-rules" passHref>
+            <div className="hover:text-gray-300 cursor-pointer">Game Rules</div>
+          </Link>
+          <Link href="/tutorial" passHref>
+            <div className="hover:text-gray-300 cursor-pointer">Tutorial</div>
+          </Link>
+          <Link href="/new-game" passHref>
+            <div className="hover:text-gray-300 cursor-pointer">New Game</div>
+          </Link>
+          <Link href="/faq" passHref>
+            <div className="hover:text-gray-300 cursor-pointer">FAQ</div>
+          </Link>
+        </nav>
+      </header>
+
+      {/* Main content of the page */}
+      <main className="flex-1 p-4 mt-16 ">
+        {/* Image */}
+        <img
+          src="\Image\Cover.jpg"
+          className="mb-4 rounded-md shadow-lg"
+
         />
-      </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        {/* Paragraph of text */}
+        <p className="mb-4 border-8 text-center">
+          <h1>Objective:</h1>
+          <li>The objective of the game is to have every player to complete their agenda by collecting action cards and maintain three more rounds with resources above threshold.
+            Preparation:
+            Place the board on a table and put all cards on their allotted spaces on the board with the choices side facing up. Each player chooses one avatar to represent him/her while traveling around the board.
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+            The common pool of resources starts with X fuel, Y food and Z water tokens, the remaining resources go to the Bank.</li>
+          <h1>Avatar Description:</h1>
+          <h2>Student</h2>
+          <li>Student avatar has to complete 2 agendas in school, 1 agenda at the mall and 1agenda at home.</li>
+          <h2>Parent</h2>
+          <li>Parent avatar has to complete 1 agenda at the workplace, 1 agenda at the mall, 1 agenda at the school and 1 agenda at home.</li>
+          <h2>Elderly</h2>
+          <li>Elderly avatar has to complete 2 agendas at the farm, 1 agenda at the mall and 1 agenda at home.</li>
+          <h2>Manager</h2>
+          <li>Manager avatar has to complete 2 agendas at the workplace, 1 agenda at the farm and 1 agenda at home.</li>
+          <h1>Common Resource Pool</h1>
+          <li>Common Resource Pool is the place where all the resources are stored in the country. All players will be sharing the same resources and their have to do their part to maintain or gain resources from the pool. This is the place where all players will take resources from when they are completing their actions.
+          </li>
+          <h1>Buildings:</h1>
+          <li>These buildings are places where players can complete their agendas by choosing the actions they want to make.</li>
+          <h2>Mall</h2>
+          <h2>School</h2>
+          <h2>Work</h2>
+          <h2>Farm</h2>
+          <li>Farm is a place where players can grow resources by taking care of the raw materials.</li>
+          <h2>Home</h2>
+          <h2>Bike Lanes</h2>
+          <li>Bike lanes gives express access to other places by quicker transportation route.</li>
+          <h1>How to Play:</h1>
+          <li>Each player in turn throws the dice. The player with the highest total starts the play: Place your token at your individual houses, throw the dice and move your token in the number of spaces indicated by the dice. After you have completed your play, the turn passes to the left. The token remain on the spaces occupied and proceed from that point on the player's next turn. Two or more tokens may rest on the same space at the same time.
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+            According to the spaces your token reaches, you may be entitled to draw an action card, a situational card, farm for resources or collaborate with each other etc.
+          </li>
+          <h2>Drawing Action Cards:</h2>
+          <li>You will draw an action card when you reaches a building as described above. Take the top card from the deck indicated, choose an action to take from the two choices shown.
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            Pay for your action by taking resources from the common resource pool as written on the card. Only flip the card to read the back side once you have chosen the action to take. You have completed one agenda from that building and you may keep the card.
+
+            At every subsequent round, long term resources will have to be taken from the common resource pool.</li>
+          <h2>Situation Cards:</h2>
+          <li>When you land on situation tile, take the top card from the deck, follow the instructions and return the card facedown to the bottom of the deck.</li>
+
+        </p>
+
+        {/* "Click for More" button leading to the same page as Game Rules */}
+        <Link href="/game-rules" passHref>
+          <div className="text-blue-500 hover:underline">Click for More</div>
+        </Link>
+      </main>
+
+
+      {/* Footer component with contact information */}
+      <footer className="bg-gray-800 text-white p-4 mt-auto w-full">
+        <div className="flex justify-between">
+          <div>
+            <h4>ADDRESS: 8 SOMAPAH ROAD</h4>
+            <p>PHONE NUMBER: 81234567</p>
+          </div>
+          <div>
+            <h4>OUR TEAM:</h4>
+            <ul>
+              <li>Castone Group S44</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <p>&copy; {new Date().getFullYear()} THE CIRCLE FOR HUMAN SUSTAINABILITY</p>
+        </div>
+      </footer>
+    </div>
+  );
 }
