@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { db } from '../firebaseConfig'
 import { collection, getDocs, addDoc } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
+import MenuBar from '../../components/menuBar';
 
 // Add document to collection
 // TODO to be moved to another file for neatness
@@ -55,89 +56,92 @@ export default function NewGame() {
         }
     };
     return (
-        <main class="max-w-4xl mx-auto w-screen flex flex-col items-center justify-center">
-            <h1 className='text-2xl font-bold underline'>New Game</h1>
-            <form action="#" className="w-full grid gap-2 px-4">
-                <div className="flex justify-between items-center">
-                    <label className='w-32 text-right pr-4 font-bold text-gray-700'>Team Name</label>
-                    <div class="flex-1">
-                        <input
-                            type="text"
-                            placeholder="Team Name"
-                            value={teamName}
-                            onChange={(e) => setTeamName(e.target.value)}
-                            class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                        />
+        <>
+            <MenuBar />
+            <main class="max-w-4xl mx-auto w-screen flex flex-col items-center justify-center">
+                <h1 className='text-2xl font-bold underline'>New Game</h1>
+                <form action="#" className="w-full grid gap-2 px-4">
+                    <div className="flex justify-between items-center">
+                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Team Name</label>
+                        <div class="flex-1">
+                            <input
+                                type="text"
+                                placeholder="Team Name"
+                                value={teamName}
+                                onChange={(e) => setTeamName(e.target.value)}
+                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                            />
+                        </div>
                     </div>
-                </div>
 
-                <div className="flex justify-between items-center">
-                    <label className='w-32 text-right pr-4 font-bold text-gray-700'>Total Resources</label>
-                    <div class="flex-1">
-                        <input
-                            type="number"
-                            placeholder="Total Resources"
-                            value={totalResources}
-                            onChange={(e) => setTotalResources(e.target.value)}
-                            class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                        />
+                    <div className="flex justify-between items-center">
+                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Total Resources</label>
+                        <div class="flex-1">
+                            <input
+                                type="number"
+                                placeholder="Total Resources"
+                                value={totalResources}
+                                onChange={(e) => setTotalResources(e.target.value)}
+                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                            />
+                        </div>
                     </div>
-                </div>
 
-                <div className="flex justify-between items-center">
-                    <label className='w-32 text-right pr-4 font-bold text-gray-700'>Max Resource</label>
-                    <div class="flex-1">
-                        <input
-                            type="number"
-                            placeholder="Max Resource"
-                            value={maxResource}
-                            onChange={(e) => setMaxResource(e.target.value)}
-                            class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                        />
+                    <div className="flex justify-between items-center">
+                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Max Resource</label>
+                        <div class="flex-1">
+                            <input
+                                type="number"
+                                placeholder="Max Resource"
+                                value={maxResource}
+                                onChange={(e) => setMaxResource(e.target.value)}
+                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                            />
+                        </div>
                     </div>
-                </div>
 
-                <div className="flex justify-between items-center">
-                    <label className='w-32 text-right pr-4 font-bold text-gray-700'>Min Resource</label>
-                    <div class="flex-1">
-                        <input
-                            type="number"
-                            placeholder="Min Resource"
-                            value={minResource}
-                            onChange={(e) => setMinResource(e.target.value)}
-                            class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                        />
+                    <div className="flex justify-between items-center">
+                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Min Resource</label>
+                        <div class="flex-1">
+                            <input
+                                type="number"
+                                placeholder="Min Resource"
+                                value={minResource}
+                                onChange={(e) => setMinResource(e.target.value)}
+                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                            />
+                        </div>
                     </div>
-                </div>
 
-                <div className="flex justify-between items-center">
-                    <label className='w-32 text-right pr-4 font-bold text-gray-700'>Number of Farms</label>
-                    <div class="flex-1">
-                        <input
-                            type="number"
-                            placeholder="Number of Farms"
-                            value={numFarms}
-                            onChange={(e) => setNumFarms(e.target.value)}
-                            class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                        />
+                    <div className="flex justify-between items-center">
+                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Number of Farms</label>
+                        <div class="flex-1">
+                            <input
+                                type="number"
+                                placeholder="Number of Farms"
+                                value={numFarms}
+                                onChange={(e) => setNumFarms(e.target.value)}
+                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                            />
+                        </div>
                     </div>
+
+                    <div class="flex justify-end">
+                        <button type="submit" name="calculate" className="bg-white py-2 px-2 border border-gray-300 rounded-md shadow-sm font-bold text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600" onClick={handleSubmit} >Calculate</button>
+                        <button type="submit" name="add" className="ml-3 inline-flex justify-center py-2 px-2 border border-transparent shadow-sm font-bold rounded-md text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600" onClick={handleSubmit} >Submit</button>
+                    </div>
+
+                </form>
+
+                <div class="flex justify-center">
+                    <span className='w-32 text-center pr-4 font-bold text-gray-700'>Score is :</span>
+                    <span className='text-center pr-4 text-gray-700 underline'>{score}</span>
                 </div>
 
-                <div class="flex justify-end">
-                    <button type="submit" name="calculate" className="bg-white py-2 px-2 border border-gray-300 rounded-md shadow-sm font-bold text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600" onClick={handleSubmit} >Calculate</button>
-                    <button type="submit" name="add" className="ml-3 inline-flex justify-center py-2 px-2 border border-transparent shadow-sm font-bold rounded-md text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600" onClick={handleSubmit} >Submit</button>
-                </div>
-
-            </form>
-
-            <div class="flex justify-center">
-                <span className='w-32 text-center pr-4 font-bold text-gray-700'>Score is :</span>
-                <span className='text-center pr-4 text-gray-700 underline'>{score}</span>
-            </div>
-
-            <h2 className='align-text-bottom'>
-                <Link href="/" className="hover:font-bold">Back to home</Link>
-            </h2>
-        </main>
+                <h2 className='align-text-bottom'>
+                    <Link href="/" className="hover:font-bold">Back to home</Link>
+                </h2>
+            </main>
+        </>
     );
 }
