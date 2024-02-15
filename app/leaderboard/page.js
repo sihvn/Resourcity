@@ -2,12 +2,16 @@
 
 import Link from 'next/link'
 import { db } from '../firebaseConfig'
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { query, collection, getDocs, orderBy } from 'firebase/firestore';
+// import { ref, query } from 'firebase/database';
 import React, { useState, useEffect } from 'react';
 
 // Get documents from collection
 async function fetchData() {
-    const querySnapshot = await getDocs(collection(db, "Highscore"));
+    const querySnapshot = await getDocs(query(collection(db, "Highscore"), orderBy('Score', "desc")));
+    // let articlesSnapshot = await getDocs(query(articlesRef, orderBy('timestamp')));
+    // const dbRef = collection(db, "cities");
+    // const querySnapshot = query(collection(db, "Highscore"));
 
     const data = [];
     querySnapshot.forEach((doc) => {
@@ -19,6 +23,7 @@ async function fetchData() {
 export default function Leaderboard() {
     const [userData, setUserData] = useState([]);
 
+    // Use fetchData to get data from firestore
     useEffect(() => {
         async function fetchDataFromFirestore() {
             const data = await fetchData();
@@ -27,17 +32,29 @@ export default function Leaderboard() {
         fetchDataFromFirestore();
     }, []);
 
+
+    // Display data in a table form
     return (
         <main>
             <h1>Leaderboard</h1>
 
-            <div>
-                {userData.map((data) => (
-                    <div key={data.id}>
-                        <h3>{data.TeamName}</h3>
-                        <p>{data.Score}</p>
-                    </div>
-                ))}
+            <div className="table-container">
+                <table id="leaderboard">
+                    <thead>
+                        <tr>
+                            <th>Team Name</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {userData.map((data) => (
+                            <tr key={data.id}>
+                                <td>{data.TeamName}</td>
+                                <td>{data.Score}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
 
             <h2>
@@ -46,3 +63,10 @@ export default function Leaderboard() {
         </main>
     );
 }
+
+{/* {userData.map((data) => (
+                    <div key={data.id}>
+                        <h3>{data.TeamName}</h3>
+                        <p>{data.Score}</p>
+                    </div>
+                ))} */}

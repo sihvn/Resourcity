@@ -11,7 +11,7 @@ async function addData(teamName, score) {
         const colRef = collection(db, "Highscore");
         const docRef = await addDoc(colRef, {
             TeamName: teamName,
-            Score: score
+            Score: Number(score)
         });
         console.log("Document written with ID: ", docRef.id);
         return true;
@@ -29,8 +29,8 @@ export default function NewGame() {
         e.preventDefault();
         const added = await addData(teamName, score);
         if (added) {
-            setTeamName('');
-            setScore('');
+            setTeamName(''); // Clear input field
+            setScore(0); // Clear input field
             console.log(' Data added successfully');
         }
     };
