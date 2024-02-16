@@ -58,7 +58,7 @@ export default function NewGame() {
     return (
         <>
             <MenuBar />
-            <main class="max-w-4xl mx-auto w-screen flex flex-col items-center justify-center">
+            <main class="max-w-4xl mx-auto mt-20 w-screen flex flex-col items-center justify-center">
                 <h1 className='text-2xl font-bold underline'>New Game</h1>
                 <form action="#" className="w-full grid gap-2 px-4">
                     <div className="flex justify-between items-center">

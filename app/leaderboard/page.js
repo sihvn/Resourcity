@@ -38,7 +38,7 @@ export default function Leaderboard() {
     return (
         <>
             <MenuBar />
-            <main class="max-w-4xl mx-auto w-screen flex flex-col items-center justify-center">
+            <main class="max-w-4xl mt-20 mx-auto w-screen flex flex-col items-center justify-center">
                 <h1 className='text-2xl font-bold underline'>Leaderboard</h1>
 
                 <div className="table-container">
