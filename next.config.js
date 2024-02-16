@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    basePath: '/CapstoneProject',
+    //basePath: '/CapstoneProject',
+    assetPrefix: '/CapstoneProject',
     reactStrictMode: true,
     // rewrites: async () => {
     //     return [
