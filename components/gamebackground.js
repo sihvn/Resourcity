@@ -15,7 +15,7 @@ const GameBackground = () => {
                 <Link href="/rules" className="text-red hover:text-gray-500 cursor-pointer">Learn More..</Link>
             </div>
             <div className="flex justify-center items-center">
-                <img src="/images/backgroundimage.png" alt="My Image" />
+                <img src="/CapstoneProject/images/backgroundimage.png" alt="My Image" />
             </div>
         </div>
     )
