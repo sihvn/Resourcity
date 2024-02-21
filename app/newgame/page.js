@@ -65,11 +65,12 @@ export default function NewGame() {
                         <label className='w-32 text-right pr-4 font-bold text-gray-700'>Team Name</label>
                         <div class="flex-1">
                             <input
+                                required
                                 type="text"
                                 placeholder="Team Name"
                                 value={teamName}
                                 onChange={(e) => setTeamName(e.target.value)}
-                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
                             />
                         </div>
                     </div>
@@ -78,11 +79,13 @@ export default function NewGame() {
                         <label className='w-32 text-right pr-4 font-bold text-gray-700'>Total Resources</label>
                         <div class="flex-1">
                             <input
+                                required
                                 type="number"
+                                min="0"
                                 placeholder="Total Resources"
                                 value={totalResources}
                                 onChange={(e) => setTotalResources(e.target.value)}
-                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
                             />
                         </div>
                     </div>
@@ -91,11 +94,13 @@ export default function NewGame() {
                         <label className='w-32 text-right pr-4 font-bold text-gray-700'>Max Resource</label>
                         <div class="flex-1">
                             <input
+                                required
                                 type="number"
+                                min="0"
                                 placeholder="Max Resource"
                                 value={maxResource}
                                 onChange={(e) => setMaxResource(e.target.value)}
-                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
                             />
                         </div>
                     </div>
@@ -104,11 +109,13 @@ export default function NewGame() {
                         <label className='w-32 text-right pr-4 font-bold text-gray-700'>Min Resource</label>
                         <div class="flex-1">
                             <input
+                                required
                                 type="number"
+                                min="0"
                                 placeholder="Min Resource"
                                 value={minResource}
                                 onChange={(e) => setMinResource(e.target.value)}
-                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
                             />
                         </div>
                     </div>
@@ -117,11 +124,13 @@ export default function NewGame() {
                         <label className='w-32 text-right pr-4 font-bold text-gray-700'>Number of Farms</label>
                         <div class="flex-1">
                             <input
+                                required
                                 type="number"
+                                min="0"
                                 placeholder="Number of Farms"
                                 value={numFarms}
                                 onChange={(e) => setNumFarms(e.target.value)}
-                                class="w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
+                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
                             />
                         </div>
                     </div>
