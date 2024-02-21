@@ -147,6 +147,11 @@ export default function NewGame() {
                     <span className='text-center pr-4 text-gray-700 underline'>{score}</span>
                 </div>
 
+
+                <h2 className='flex justify-center'>
+                    <span className='text-center pr-4 text-gray-700'>Formula: Total Resource  - (Max Resource - Min Resource) + Number of Farms</span>
+                </h2>
+
                 <h2 className='align-text-bottom'>
                     <Link href="/" className="hover:font-bold">Back to home</Link>
                 </h2>
