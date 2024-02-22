@@ -6,6 +6,7 @@ import { query, collection, getDocs, orderBy } from 'firebase/firestore';
 // import { ref, query } from 'firebase/database';
 import React, { useState, useEffect } from 'react';
 import MenuBar from '../../components/menuBar';
+import BaseTemplate from '../../components/baseTemplate';
 
 // Get documents from collection
 async function fetchData() {
@@ -36,35 +37,36 @@ export default function Leaderboard() {
 
     // Display data in a table form
     return (
-        <>
-            <MenuBar />
-            <main class="max-w-4xl mt-20 mx-auto w-screen flex flex-col items-center justify-center">
-                <h1 className='text-2xl font-bold underline'>Leaderboard</h1>
+        <BaseTemplate>
+            <>
+                <main class="max-w-4xl mt-20 mx-auto w-screen flex flex-col items-center justify-center">
+                    <h1 className='text-2xl font-bold underline'>Leaderboard</h1>
 
-                <div className="table-container">
-                    <table id="leaderboard">
-                        <thead>
-                            <tr>
-                                <th>Team Name</th>
-                                <th>Score</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {userData.map((data) => (
-                                <tr key={data.id}>
-                                    <td>{data.TeamName}</td>
-                                    <td>{data.Score}</td>
+                    <div className="table-container">
+                        <table id="leaderboard">
+                            <thead>
+                                <tr>
+                                    <th>Team Name</th>
+                                    <th>Score</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                                {userData.map((data) => (
+                                    <tr key={data.id}>
+                                        <td>{data.TeamName}</td>
+                                        <td>{data.Score}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
 
-                <h2>
-                    <Link href="/" className='hover:font-bold'>Back to home</Link>
-                </h2>
-            </main>
-        </>
+                    <h2>
+                        <Link href="/" className='hover:font-bold'>Back to home</Link>
+                    </h2>
+                </main>
+            </>
+        </BaseTemplate>
     );
 }
 
