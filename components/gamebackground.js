@@ -3,7 +3,10 @@ import Link from 'next/link';
 
 const GameBackground = () => {
     return (
-        <div className="flex justify-center items-center m-40">
+        <div className="flex flex-col lg:flex-row justify-center items-center m-0">
+            <div className="flex justify-center items-center">
+                <img src="/CapstoneProject/images/Backgroundimage.png" />
+            </div>
             <div className="text-left p-8">
                 <h1 className="text-4xl font-bold mb-4">The city needs your help! </h1>
                 <p className="text-lg">As climate issues and overconsumption worsen around the world, countries have started to keep resources to themselves. </p>
@@ -13,9 +16,6 @@ const GameBackground = () => {
                 <p className="text-lg">You lose if your team runs out of any Resource type at any point during the game. </p>
                 <br></br>
                 <Link href="/rules" className="text-red hover:text-gray-500 cursor-pointer">Learn More..</Link>
-            </div>
-            <div className="flex justify-center items-center">
-                <img src="/CapstoneProject/images/Backgroundimage.png" />
             </div>
         </div>
     )

@@ -1,3 +1,4 @@
+"use client";
 import Link from 'next/link'
 import MenuBar from '../../components/menuBar';
 import GameSetup from '../../components/gamesetup';
