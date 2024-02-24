@@ -30,8 +30,8 @@ const BaseTemplate = ({ children }) => {
                     }}
                 >
                     <a className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="/CapstoneProject/images/logo.jpg" className="h-16" />
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap">Resourcity</span>
+                        <img src="/CapstoneProject/images/logo.png" className="h-16" />
+                        {/* <span className="self-center text-2xl font-semibold whitespace-nowrap">Resourcity</span> */}
                     </a>
                 </Header>
                 <Content
@@ -56,7 +56,7 @@ const BaseTemplate = ({ children }) => {
                         textAlign: 'center',
                     }}
                 >
-                    The Circle for Human Sustainability ©{new Date().getFullYear()} Created by SUTD Team 44
+                    The Circle for Human Sustainability ©{new Date().getFullYear()} Created by SUTD ACE Capstone Group
                 </Footer>
             </Layout>
             <MenuBar />
