@@ -89,6 +89,7 @@ const BaseTemplate = ({ children }) => {
                         minHeight: 280,
                         background: colorBgContainer,
                         borderRadius: borderRadiusLG,
+                        marginLeft: collapsed ? 0 : -200, // Adjust the negative margin based on your sider's width
                     }}
                 >
                     <div
