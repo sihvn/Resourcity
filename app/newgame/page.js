@@ -6,14 +6,17 @@ import { collection, getDocs, addDoc } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
 import BaseTemplate from '../../components/baseTemplate';
 
+import { Form, Input, InputNumber, Button } from 'antd';
+
 // Add document to collection
 // TODO to be moved to another file for neatness
-async function addData(teamName, score) {
+async function addData(teamName, score, currentDate) {
     try {
         const colRef = collection(db, "Highscore");
         const docRef = await addDoc(colRef, {
             TeamName: teamName,
-            Score: Number(score)
+            Score: Number(score),
+            Date: currentDate
         });
         console.log("Document written with ID: ", docRef.id);
         return true;
@@ -27,134 +30,81 @@ async function addData(teamName, score) {
 // (sum.resources - (max.resource - min.resource)) + num.farms
 
 export default function NewGame() {
-    const [teamName, setTeamName] = useState('');
-    const [totalResources, setTotalResources] = useState(0);
-    const [maxResource, setMaxResource] = useState(0);
-    const [minResource, setMinResource] = useState(0);
-    const [numFarms, setNumFarms] = useState(0);
-    const [score, setScore] = useState(0);
 
-    // TODO to be moved to another file for neatness
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const [form] = Form.useForm();
 
-        if (e.target.name == 'calculate') {
-            const newScore = (Number(totalResources) - (Number(maxResource) - Number(minResource))) + Number(numFarms);
-            console.log('New Score: ', newScore);
-            setScore(newScore);
-        } else {
-            const added = await addData(teamName, score);
-            if (added) {
-                setTeamName(''); // Clear input field
-                setTotalResources(0); // Clear input field
-                setMaxResource(0); // Clear input field
-                setMinResource(0); // Clear input field
-                setNumFarms(0); // Clear input field
-                setScore(0); // Clear input field
-                console.log(' Data added successfully');
-            }
-        }
+    // for use in the formula description
+    const tr = Form.useWatch('totalResources', form);
+    const mxr = Form.useWatch('maximumResources', form);
+    const mir = Form.useWatch('minimumResources', form);
+    const nof = Form.useWatch('numberOfFarms', form);
+
+    const [newScore, setNewScore] = useState(0);
+
+    const calculateSum = () => {
+        const newScore = (form.getFieldsValue().totalResources - (form.getFieldsValue().maximumResources - form.getFieldsValue().minimumResources) + form.getFieldsValue().numberOfFarms);
+        setNewScore(newScore);
+    };
+
+    const onFinish = async (values) => {
+        // Add the current date to the form data
+        const currentDate = new Date();
+        const newScore = (Number(totalResources.value) - (Number(maximumResources.value) - Number(minimumResources.value)) + Number(numberOfFarms.value));
+        const added = await addData(values.name, newScore, currentDate);
+        console.log('Success:', values, currentDate);
+    };
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
     };
     return (
         <BaseTemplate>
-            <main class="flex flex-col justify-center items-center m-0">
-                <h1 className='text-2xl font-bold underline'>New Game</h1>
-                <form action="#" className="w-full grid gap-2 px-4">
-                    <div className="flex justify-between items-center">
-                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Team Name</label>
-                        <div class="flex-1">
-                            <input
-                                required
-                                type="text"
-                                placeholder="Team Name"
-                                value={teamName}
-                                onChange={(e) => setTeamName(e.target.value)}
-                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex justify-between items-center">
-                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Total Resources</label>
-                        <div class="flex-1">
-                            <input
-                                required
-                                type="number"
-                                min="0"
-                                placeholder="Total Resources"
-                                value={totalResources}
-                                onChange={(e) => setTotalResources(e.target.value)}
-                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex justify-between items-center">
-                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Max Resource</label>
-                        <div class="flex-1">
-                            <input
-                                required
-                                type="number"
-                                min="0"
-                                placeholder="Max Resource"
-                                value={maxResource}
-                                onChange={(e) => setMaxResource(e.target.value)}
-                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex justify-between items-center">
-                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Min Resource</label>
-                        <div class="flex-1">
-                            <input
-                                required
-                                type="number"
-                                min="0"
-                                placeholder="Min Resource"
-                                value={minResource}
-                                onChange={(e) => setMinResource(e.target.value)}
-                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex justify-between items-center">
-                        <label className='w-32 text-right pr-4 font-bold text-gray-700'>Number of Farms</label>
-                        <div class="flex-1">
-                            <input
-                                required
-                                type="number"
-                                min="0"
-                                placeholder="Number of Farms"
-                                value={numFarms}
-                                onChange={(e) => setNumFarms(e.target.value)}
-                                class="invalid:border-red-300 invalid:border-2 w-full rounded-md appearance-none border border-gray-300 py-2 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent"
-                            />
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center">
-                        <button type="submit" name="calculate" className="bg-white py-2 px-2 border border-gray-300 rounded-md shadow-sm font-bold text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600" onClick={handleSubmit} >Calculate</button>
-                        <button type="submit" name="add" className="ml-3 inline-flex justify-center py-2 px-2 border border-transparent shadow-sm font-bold rounded-md text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600" onClick={handleSubmit} >Submit</button>
-                    </div>
-
-                </form>
-
-                <div class="flex justify-center">
-                    <span className='w-32 text-center pr-4 font-bold text-gray-700'>Score is :</span>
-                    <span className='text-center pr-4 text-gray-700 underline'>{score}</span>
-                </div>
-
-
-                <h2 className='flex justify-center'>
-                    <span className='text-center pr-4 text-gray-700'>Formula: Total Resource  - (Max Resource - Min Resource) + Number of Farms</span>
-                </h2>
-
-                <h2 className='align-text-bottom'>
-                    <Link href="/" className="hover:font-bold">Back to home</Link>
-                </h2>
-            </main>
+            <Form form={form} layout="vertical" onFinish={onFinish} onValuesChange={calculateSum}>
+                <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter a name' }]}>
+                    <Input />
+                </Form.Item>
+                <Form.Item name="totalResources" label="Total Resources" rules={[
+                    {
+                        pattern: new RegExp(/^[0-9]+$/),
+                        required: true,
+                        message: 'Please enter a number above 0 for Total Resources'
+                    }
+                ]}>
+                    <InputNumber />
+                </Form.Item>
+                <Form.Item name="maximumResources" label="Maximum Resources" rules={[
+                    {
+                        pattern: new RegExp(/^[0-9]+$/),
+                        required: true,
+                        message: 'Please enter a number above 0 for Maximum Resources'
+                    }]
+                }>
+                    <InputNumber />
+                </Form.Item>
+                <Form.Item name="minimumResources" label="Minimum Resources" rules={[
+                    {
+                        pattern: new RegExp(/^[0-9]+$/),
+                        required: true,
+                        message: 'Please enter a number above 0 for Total Resources'
+                    }]
+                }>
+                    <InputNumber />
+                </Form.Item>
+                <Form.Item name="numberOfFarms" label="Number of Farms" rules={[
+                    {
+                        pattern: new RegExp(/^[0-9]+$/),
+                        required: true,
+                        message: 'Please enter a number above 0 for Total Resources'
+                    }]
+                }>
+                    <InputNumber />
+                </Form.Item>
+                <Form.Item>
+                    <Button type="default" htmlType="submit">Submit</Button>
+                </Form.Item>
+            </Form>
+            <h2 className='flex justify-center'>
+                <span className='text-center pr-4 text-gray-700'>Formula: Total Resource <b>[{tr}]</b>  - (Max Resource <b>[{mxr}]</b> - Min Resource <b>[{mir}]</b>) + Number of Farms <b>[{nof}]</b> = <b>{newScore}</b></span>
+            </h2>
         </BaseTemplate>
     );
 }
