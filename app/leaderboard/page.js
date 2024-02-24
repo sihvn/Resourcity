@@ -39,7 +39,7 @@ export default function Leaderboard() {
     return (
         <BaseTemplate>
             <>
-                <main class="max-w-4xl mt-20 mx-auto w-screen flex flex-col items-center justify-center">
+                <main class="flex flex-col justify-center items-center m-0">
                     <h1 className='text-2xl font-bold underline'>Leaderboard</h1>
 
                     <div className="table-container">
