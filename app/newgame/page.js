@@ -134,7 +134,7 @@ export default function NewGame() {
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-center">
                         <button type="submit" name="calculate" className="bg-white py-2 px-2 border border-gray-300 rounded-md shadow-sm font-bold text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600" onClick={handleSubmit} >Calculate</button>
                         <button type="submit" name="add" className="ml-3 inline-flex justify-center py-2 px-2 border border-transparent shadow-sm font-bold rounded-md text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600" onClick={handleSubmit} >Submit</button>
                     </div>
