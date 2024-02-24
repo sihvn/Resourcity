@@ -8,6 +8,8 @@ import React, { useState, useEffect } from 'react';
 import MenuBar from '../../components/menuBar';
 import BaseTemplate from '../../components/baseTemplate';
 
+import { Table } from 'antd';
+
 // Get documents from collection
 async function fetchData() {
     const querySnapshot = await getDocs(query(collection(db, "Highscore"), orderBy('Score', "desc")));
@@ -17,7 +19,10 @@ async function fetchData() {
 
     const data = [];
     querySnapshot.forEach((doc) => {
-        data.push({ id: doc.id, ...doc.data() });
+        data.push({
+            id: doc.id, ...doc.data(),
+            Date: new Date(doc.data().Date.seconds * 1000).toLocaleDateString('en-GB') // Format timestamp as DD/MM/YYYY
+        });
     });
     return data;
 }
@@ -34,6 +39,24 @@ export default function Leaderboard() {
         fetchDataFromFirestore();
     }, []);
 
+    const columns = [
+        {
+            title: 'Team Name',
+            dataIndex: 'TeamName',
+            key: 'TeamName',
+        },
+        {
+            title: 'Score',
+            dataIndex: 'Score',
+            key: 'Score',
+        },
+        {
+            title: 'Date',
+            dataIndex: 'Date',
+            key: 'Date',
+        }
+        // Add more columns as needed
+    ];
 
     // Display data in a table form
     return (
@@ -42,24 +65,7 @@ export default function Leaderboard() {
                 <main class="flex flex-col justify-center items-center m-0">
                     <h1 className='text-2xl font-bold underline'>Leaderboard</h1>
 
-                    <div className="table-container">
-                        <table id="leaderboard">
-                            <thead>
-                                <tr>
-                                    <th>Team Name</th>
-                                    <th>Score</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {userData.map((data) => (
-                                    <tr key={data.id}>
-                                        <td>{data.TeamName}</td>
-                                        <td>{data.Score}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
+                    <Table dataSource={userData} columns={columns} />
 
                     <h2>
                         <Link href="/" className='hover:font-bold'>Back to home</Link>
