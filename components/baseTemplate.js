@@ -21,66 +21,66 @@ const BaseTemplate = ({ children }) => {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
 
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
 
     return (
         <Layout>
-            <Sider
-                trigger={null}
-                collapsible
-                collapsed={collapsed}
-                collapsedWidth="0"
-                breakpoint="lg"
-                onBreakpoint={(broken) => {
-                    console.log(broken);
-                }}
-                onCollapse={(collapsed, type) => {
-                    console.log(collapsed, type);
+            <Header
+                style={{
+                    padding: 0,
+                    background: colorBgContainer,
+                    display: 'flex', // Add flex display to align items horizontally
                 }}
             >
-                <div className="demo-logo-vertical" />
-                <Menu theme="dark" mode="inline">
-                    <Menu.Item key="1">
-                        <Link href="/">Home</Link>
-                    </Menu.Item>
-                    <Menu.Item key="2">
-                        <Link href="/rules">Game Rules</Link>
-                    </Menu.Item>
-                    <Menu.Item key="3">
-                        <Link href="/tutorial">Tutorial</Link>
-                    </Menu.Item>
-                    <Menu.Item key="4">
-                        <Link href="/newgame">New Game</Link>
-                    </Menu.Item>
-                    <Menu.Item key="5">
-                        <Link href="/leaderboard">Leaderboard</Link>
-                    </Menu.Item>
-                    <Menu.Item key="6">
-                        <Link href="/faq">FAQ</Link>
-                    </Menu.Item>
-                </Menu>
-            </Sider>
+                <Button
+                    type="text"
+                    icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                    onClick={() => setCollapsed(!collapsed)}
+                    style={{
+                        fontSize: '16px',
+                        width: 64,
+                        height: 64,
+                    }} />
+                <img src="/CapstoneProject/images/logo.png" className="h-16" />
+
+            </Header>
 
             <Layout>
-                <Header
-                    style={{
-                        padding: 0,
-                        background: colorBgContainer,
-                        display: 'flex', // Add flex display to align items horizontally
+                <Sider
+                    trigger={null}
+                    collapsible
+                    collapsed={collapsed}
+                    collapsedWidth="0"
+                    breakpoint="lg"
+                    onBreakpoint={(broken) => {
+                        console.log(broken);
+                    }}
+                    onCollapse={(collapsed, type) => {
+                        console.log(collapsed, type);
                     }}
                 >
-                    <Button
-                        type="text"
-                        icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-                        onClick={() => setCollapsed(!collapsed)}
-                        style={{
-                            fontSize: '16px',
-                            width: 64,
-                            height: 64,
-                        }} />
-                    <img src="/CapstoneProject/images/logo.png" className="h-16" />
-
-                </Header>
+                    <div className="demo-logo-vertical" />
+                    <Menu theme="dark" mode="inline">
+                        <Menu.Item key="1">
+                            <Link href="/">Home</Link>
+                        </Menu.Item>
+                        <Menu.Item key="2">
+                            <Link href="/rules">Game Rules</Link>
+                        </Menu.Item>
+                        <Menu.Item key="3">
+                            <Link href="/tutorial">Tutorial</Link>
+                        </Menu.Item>
+                        <Menu.Item key="4">
+                            <Link href="/newgame">New Game</Link>
+                        </Menu.Item>
+                        <Menu.Item key="5">
+                            <Link href="/leaderboard">Leaderboard</Link>
+                        </Menu.Item>
+                        <Menu.Item key="6">
+                            <Link href="/faq">FAQ</Link>
+                        </Menu.Item>
+                    </Menu>
+                </Sider>
 
                 <Content
                     style={{
@@ -103,15 +103,15 @@ const BaseTemplate = ({ children }) => {
                         {children}
                     </div>
                 </Content>
-
-                <Footer
-                    style={{
-                        textAlign: 'center',
-                    }}
-                >
-                    The Circle for Human Sustainability ©{new Date().getFullYear()} Created by SUTD ACE Capstone Group
-                </Footer>
             </Layout>
+
+            <Footer
+                style={{
+                    textAlign: 'center',
+                }}
+            >
+                The Circle for Human Sustainability ©{new Date().getFullYear()} Created by SUTD ACE Capstone Group
+            </Footer>
         </Layout>
     );
 };
