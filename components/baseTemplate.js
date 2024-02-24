@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
-import { Layout, Menu, Button, theme } from 'antd';
+import { Layout, Drawer, Button, Menu, theme } from 'antd';
 // import GameBackground from './gamebackground';
 // import MenuBar from './menuBar';
 // import Base from 'antd/es/typography/Base';
@@ -46,21 +46,12 @@ const BaseTemplate = ({ children }) => {
             </Header>
 
             <Layout>
-                <Sider
-                    trigger={null}
-                    collapsible
-                    collapsed={collapsed}
-                    collapsedWidth="0"
-                    breakpoint="lg"
-                    onBreakpoint={(broken) => {
-                        console.log(broken);
-                    }}
-                    onCollapse={(collapsed, type) => {
-                        console.log(collapsed, type);
-                    }}
+                <Drawer
+                    onClose={() => setCollapsed(!collapsed)}
+                    open={!collapsed}
+                    placement='left'
                 >
-                    <div className="demo-logo-vertical" />
-                    <Menu theme="dark" mode="inline">
+                    <Menu theme="light" mode="inline">
                         <Menu.Item key="1">
                             <Link href="/">Home</Link>
                         </Menu.Item>
@@ -80,7 +71,7 @@ const BaseTemplate = ({ children }) => {
                             <Link href="/faq">FAQ</Link>
                         </Menu.Item>
                     </Menu>
-                </Sider>
+                </Drawer>
 
                 <Content
                     style={{
@@ -89,7 +80,6 @@ const BaseTemplate = ({ children }) => {
                         minHeight: 280,
                         background: colorBgContainer,
                         borderRadius: borderRadiusLG,
-                        marginLeft: collapsed ? 24 : -200 + 24, // Adjust the negative margin based on your sider's width
                     }}
                 >
                     <div
