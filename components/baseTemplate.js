@@ -30,6 +30,7 @@ const BaseTemplate = ({ children }) => {
                     padding: 0,
                     background: colorBgContainer,
                     display: 'flex', // Add flex display to align items horizontally
+
                 }}
             >
                 <Button
@@ -62,7 +63,7 @@ const BaseTemplate = ({ children }) => {
                             <Link href="/tutorial">Tutorial</Link>
                         </Menu.Item>
                         <Menu.Item key="4">
-                            <Link href="/newgame">New Game</Link>
+                            <Link href="/newgame">Game Score</Link>
                         </Menu.Item>
                         <Menu.Item key="5">
                             <Link href="/leaderboard">Leaderboard</Link>

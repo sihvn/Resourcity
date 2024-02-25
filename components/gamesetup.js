@@ -2,9 +2,9 @@
 
 const GameSetup = () => {
     return (
-        <div className="container mx-auto mt-20 px-16 py-8">
-            <div className="mb-8 text-left ">
-                <h1 className="text-4xl font-bold mb-4">Set Up </h1>
+        <div className="container mx-0 mt-5 px-0 py-0">
+            <div className="mb-2 text-left ">
+                <h1 className="text-4xl font-bold mb-2">Set Up </h1>
                 <p className="text-lg">To begin, you will need to set up the game. </p>
             </div>
             <div className="flex justify-center mb-30">

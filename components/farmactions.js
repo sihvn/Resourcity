@@ -2,7 +2,7 @@
 
 const FarmActions = () => {
     return (
-        <div class="container mx-auto mt-20 px-16 py-8">
+        <div class="container mx-0 mt-5 px-0 py-0">
             <div class="flex justify-between">
                 <div class="w-1/2 p-4 ">
                     <h1 className="text-4xl font-bold mb-4">Farming </h1>

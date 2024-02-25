@@ -4,7 +4,7 @@ import Link from 'next/link';
 const PlayerAction = () => {
     return (
 
-        <div className="container mx-auto  mt-20 px-16 py-8">
+        <div className="container mx-0 mt-20 px-0 py-0">
             <div className="mb-8 text-left ">
                 <h1 className="text-4xl font-bold mb-4">During your turn </h1>
                 <p className="text-lg">You may take up to 4 Actions each turn. </p>
