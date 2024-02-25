@@ -4,7 +4,7 @@ const FarmActions = () => {
     return (
         <div class="container mx-0 mt-5 px-0 py-0">
             {/* <div class="flex justify-between"> */}
-            <div class="w-1/2 p-4 ">
+            <div class="p-4 ">
                 <h1 className="text-4xl font-bold mb-4">Farming </h1>
                 <h2 class="text-lg font-semibold">Build</h2>
                 <p>First, Build a Plot in your Farm.</p>
@@ -16,7 +16,7 @@ const FarmActions = () => {
                 <p>  2. (Water Catchment only) Place a Water Catchment token on the Plot.</p>
                 <p>  3. Place 1 corresponding Plot token on the Plot.</p>
             </div>
-            <div class="w-1/2 p-4 ">
+            <div class="p-4 ">
                 <h2 class="text-lg font-semibold">Plant</h2>
                 <p>Next, Plant a Crop.</p>
                 <br></br>
@@ -47,13 +47,13 @@ const FarmActions = () => {
                     <p>Once a Plot has reached the number of Crop tokens required for a Harvest, you must Harvest all Crop tokens from that Plot.</p>
                 </div>
                 {/* <div class="flex justify-between items-center p-4 mt-4"> */}
-                <div class="w-1/2 pr-4">
+                <div class="pr-4">
                     <h2 class="text-lg font-semibold">Example</h2>
                     <p>You have 3 Sugar Cane tokens on a Plot.</p>
                     <p>Remove all 3 tokens from the board. Take 5 Fuel tokens. </p>
                     <p>You choose a Harvest Bonus: 1x Fertilizer (+1 Fertilizer token) or 1x Biofuel (+1 Fuel token). </p>
                 </div>
-                <div class="w-1/2 pl-4">
+                <div class="pl-4">
                     <img src="/CapstoneProject/images/harvest.jpg" alt="Your Image" class="w-50 h-50" />
                 </div>
             </div>
