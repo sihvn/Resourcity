@@ -10,13 +10,13 @@ const GameSetup = () => {
             <div className="flex justify-center mb-30">
                 <div className="flex flex-wrap">
                     <div className="">
-                        <img src="/CapstoneProject/images/layout1.jpg" alt="Image 1" className="w-auto h-auto" />
+                        <img src="//images/layout1.jpg" alt="Image 1" className="w-auto h-auto" />
                     </div>
                     <div className="">
-                        <img src="/CapstoneProject/images/layout2.jpg" alt="Image 2" className="w-auto h-auto" />
+                        <img src="/Resourcity/images/layout2.jpg" alt="Image 2" className="w-auto h-auto" />
                     </div>
                     <div className="">
-                        <img src="/CapstoneProject/images/layout3.jpg" alt="Image 3" className="w-auto h-auto" />
+                        <img src="/Resourcity/images/layout3.jpg" alt="Image 3" className="w-auto h-auto" />
                     </div>
                 </div>
             </div>

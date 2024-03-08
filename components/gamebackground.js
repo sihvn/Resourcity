@@ -5,7 +5,7 @@ const GameBackground = () => {
     return (
         <div className="flex flex-col lg:flex-row justify-center items-center m-0">
             <div className="flex justify-center items-center">
-                <img src="/CapstoneProject/images/Backgroundimage.png" />
+                <img src="/Resourcity/images/Backgroundimage.png" />
             </div>
             <div className="text-left p-4">
                 <h1 className="text-4xl font-bold mb-4">The city needs your help! </h1>

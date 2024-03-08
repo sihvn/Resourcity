@@ -12,7 +12,7 @@ const PlayerAction = () => {
             </div>
             {/* <div className="flex justify-between pb-8"> */}
             <div className="">
-                <img src="/CapstoneProject/images/playermove1.jpg" alt="Image 1" className="w-full h-auto mb-4" />
+                <img src="/Resourcity/images/playermove1.jpg" alt="Image 1" className="w-full h-auto mb-4" />
                 <h1 className="text-xl font-bold mb-4">Move</h1>
                 <p>Move to an adjacent tile, following the road.</p>
                 <p>You cannot move to an adjacent tile if its road is disconnected from your current tile. </p>
@@ -22,19 +22,19 @@ const PlayerAction = () => {
             </div>
 
             <div className="">
-                <img src="/CapstoneProject/images/playermove2.jpg" alt="Image 2" className="w-full h-auto mb-4" />
+                <img src="/Resourcity/images/playermove2.jpg" alt="Image 2" className="w-full h-auto mb-4" />
                 <h1 className="text-xl font-bold mb-4">Exchange </h1>
                 <p>If standing on the same tile as another player, you may exchange a tile from each of your hands. </p>
                 <p className="font-bold">Cost: Free!</p>
             </div>
             <div className="">
-                <img src="/CapstoneProject/images/playermove3.jpg" alt="Image 3" className="w-full h-auto mb-4" />
+                <img src="/Resourcity/images/playermove3.jpg" alt="Image 3" className="w-full h-auto mb-4" />
                 <h1 className="text-xl font-bold mb-4">Discard </h1>
                 <p>Discard any tile from your hand into the Discard Pile. Draw 1 tile immediately. </p>
                 <p className="font-bold">Cost: Free!</p>
             </div>
             <div className="">
-                <img src="/CapstoneProject/images/playermove3.jpg" alt="Image 3" className="w-full h-auto mb-4" />
+                <img src="/Resourcity/images/playermove3.jpg" alt="Image 3" className="w-full h-auto mb-4" />
                 <h1 className="text-xl font-bold ">Rotate </h1>
                 <p>Rotate any adjacent tile by 90 degrees. </p>
                 <p className="font-bold">Cost: 1 fuel</p>
@@ -42,7 +42,7 @@ const PlayerAction = () => {
             {/* </div> */}
             {/* <div className="flex justify-between"> */}
             <div >
-                <img src="/CapstoneProject/images/playermove1.jpg" alt="Image 1" className="w-full h-auto mb-4" />
+                <img src="/Resourcity/images/playermove1.jpg" alt="Image 1" className="w-full h-auto mb-4" />
                 <h1 className="text-xl font-bold ">Swap</h1>
                 <p>Swap positions with another player. </p>
                 <p>To do this, move your player token AND the tile you are standing on.</p>
@@ -51,19 +51,19 @@ const PlayerAction = () => {
             </div>
 
             <div >
-                <img src="/CapstoneProject/images/playermove2.jpg" alt="Image 2" className="w-full h-auto mb-4" />
+                <img src="/Resourcity/images/playermove2.jpg" alt="Image 2" className="w-full h-auto mb-4" />
                 <h1 className="text-xl font-bold mb-4">Use Super-power </h1>
                 <Link href="/superpower" className="text-red hover:text-gray-500 cursor-pointer">See Superpower Cards</Link>
                 <p className="font-bold">Cost: Free!</p>
             </div>
             <div >
-                <img src="/CapstoneProject/images/playermove3.jpg" alt="Image 3" className="w-full h-auto mb-4" />
+                <img src="/Resourcity/images/playermove3.jpg" alt="Image 3" className="w-full h-auto mb-4" />
                 <h1 className="text-xl font-bold mb-4">Farm </h1>
                 <p>Build, Plant, Harvest, Fertilize</p>
                 <Link href="/farmactions" className="text-red hover:text-gray-500 cursor-pointer">See farm actions</Link>
             </div>
             <div >
-                <img src="/CapstoneProject/images/playermove3.jpg" alt="Image 3" className="w-full h-auto mb-4" />
+                <img src="/Resourcity/images/playermove3.jpg" alt="Image 3" className="w-full h-auto mb-4" />
                 <h1 className="text-xl font-bold mb-4">Replace </h1>
                 <p> Choose a tile from your hand to Replace the tile you are standing on, or any adjacent tile (including Community Centre tiles).  </p>
                 <p>You may Rotate the tile while placing it. Roads do not need to make sense (be continuous). </p>

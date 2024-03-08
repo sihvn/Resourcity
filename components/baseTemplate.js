@@ -42,7 +42,7 @@ const BaseTemplate = ({ children }) => {
                         width: 64,
                         height: 64,
                     }} />
-                <img src="/CapstoneProject/images/logo.png" className="h-16" />
+                <img src="/Resourcity/images/logo.png" className="h-16" />
 
             </Header>
 
