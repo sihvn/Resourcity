@@ -29,7 +29,7 @@ const MenuBar = () => {
                     <Link href="/tutorial">Tutorial</Link>
                 </Menu.Item>
                 <Menu.Item key="4">
-                    <Link href="/newgame">New Game</Link>
+                    <Link href="/gamescore">New Game</Link>
                 </Menu.Item>
                 <Menu.Item key="5">
                     <Link href="/leaderboard">Leaderboard</Link>

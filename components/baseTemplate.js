@@ -63,7 +63,7 @@ const BaseTemplate = ({ children }) => {
                             <Link href="/tutorial">Tutorial</Link>
                         </Menu.Item>
                         <Menu.Item key="4">
-                            <Link href="/newgame">Game Score</Link>
+                            <Link href="/gamescore">Game Score</Link>
                         </Menu.Item>
                         <Menu.Item key="5">
                             <Link href="/leaderboard">Leaderboard</Link>
