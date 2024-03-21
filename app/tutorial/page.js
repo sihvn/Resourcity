@@ -6,12 +6,15 @@ import BaseTemplate from '../../components/baseTemplate';
 export default function Tutorial() {
     return (
         <BaseTemplate>
-            <>
-                <h1>Tutorial</h1>
-                <h2>
-                    <Link href="/">Back to home</Link>
-                </h2>
-            </>
+            <div className='flex items-center justify-center'>
+                <iframe
+                    width='1280'
+                    height='720'
+                    src="https://www.youtube.com/embed/Fhwp9i6P110"
+                    frameborder="0"
+                    allowfullscreen
+                />
+            </div>
         </BaseTemplate>
     );
 }

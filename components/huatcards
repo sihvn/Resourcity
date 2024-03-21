@@ -1,0 +1,47 @@
+// //HuatCards.js
+// import React, { useState } from 'react';
+
+// const HuatCardsData = [
+//     { title: 'Bumper Harvest', image: "/Resourcity/images/Tiles/Huat/Bumper Harvest.png" },
+//     { title: 'Community Day', image: "/Resourcity/images/Tiles/Huat/Community Day.png" },
+//     { title: 'Compost Day', image: "/Resourcity/images/Tiles/Huat/Compost Day.png" },
+//     { title: 'Good Rainfall', image: "/Resourcity/images/Tiles/Huat/Good Rainfall.png" },
+
+// ];
+
+// const HuatCards = () => {
+//     const [currentCardIndex, setCurrentCardIndex] = useState(0);
+
+//     const nextCard = () => {
+//         setCurrentCardIndex((prevIndex) => (prevIndex + 1) % HuatCardsData.length);
+//     };
+
+//     const prevCard = () => {
+//         setCurrentCardIndex((prevIndex) =>
+//             prevIndex === 0 ? HuatCardsData.length - 1 : prevIndex - 1
+//         );
+//     };
+//     return (
+//         <div className="container mx-0 mt-5 px-0 py-0">
+//             <div className="p-4 ">
+//                 <h1 className="text-4xl font-bold mb-4">Huat Cards </h1>
+//                 <p>If you drew a Huat (發) tile from the draw deck, follow the instructions written on the tile.   </p>
+//                 <br></br>
+//                 <p>They include community and chance situations that positively affect your Resources, Farms or Actions.</p>
+//                 <br></br>
+//             </div>
+//             <div className="max-w-xl mx-auto mt-10">
+//                 <div className="border border-gray-200 rounded-lg shadow p-6">
+//                     <h1 className="text-4xl font-bold mb-4 text-center">{HuatCardsData[currentCardIndex].title}</h1>
+//                     <img src={HuatCardsData[currentCardIndex].image} alt={HuatCardsData[currentCardIndex].title} className="w-full rounded-lg mb-4" />
+//                     {/* <p>{cardsData[currentCardIndex].content}</p> */}
+//                     <div className="flex justify-between mt-4">
+//                         <button onClick={prevCard} className="px-4 py-2 bg-blue-500 text-white rounded-md">Previous</button>
+//                         <button onClick={nextCard} className="px-4 py-2 bg-blue-500 text-white rounded-md">Next</button>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+// export default HuatCards;

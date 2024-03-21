@@ -3,32 +3,71 @@
 const GameSetup = () => {
     return (
         <div className="container mx-0 mt-5 px-0 py-0">
-            <div className="mb-2 text-left ">
+            <div className="mb-2 text-center ">
                 <h1 className="text-4xl font-bold mb-2">Set Up </h1>
                 <p className="text-lg">To begin, you will need to set up the game. </p>
             </div>
-            <div className="flex justify-center mb-30">
-                <div className="flex flex-wrap">
-                    <div className="">
-                        <img src="//images/layout1.jpg" alt="Image 1" className="w-auto h-auto" />
-                    </div>
-                    <div className="">
-                        <img src="/Resourcity/images/layout2.jpg" alt="Image 2" className="w-auto h-auto" />
-                    </div>
-                    <div className="">
-                        <img src="/Resourcity/images/layout3.jpg" alt="Image 3" className="w-auto h-auto" />
-                    </div>
+            <div className="flex items-center justify-center mb-10 mt-10 ">
+                <div className="flex flex-col items-center mx-4">
+                    <img src="/Resourcity/images/beginnerlayout.png" alt="Beginner Layout" className="w-2/3 h-auto" />
+                    <p className="mt-2 text-center">Beginner Layout</p>
+                </div>
+                <div className="flex flex-col items-center mx-4">
+                    <img src="/Resourcity/images/advancedlayout.png" alt="Advanced Layout" className="w-2/3 h-auto" />
+                    <p className="mt-2 text-center">Advanced Layout</p>
                 </div>
             </div>
-            <div className="text-justify border-b-2 pb-8">
-                <p className="text-lg">1. Choose 1 layout from the 3 above. Lay out the tiles accordingly.</p>
-                <p className="text-lg">2. Shuffle remaining road tiles face down. Deal 3 tiles to each player, face up.</p>
-                <p className="text-lg">3. Randomly place remaining road tiles down to complete a 6x6 grid. Any remaining tiles form the draw deck. </p>
-                <p className="text-lg">4. Choose 4 Crisis cards randomly, keeping them face down.</p>
-                <p className="text-lg">5. Deal the Crisis cards into the draw deck by approximately dividing the draw deck into 4 stacks. Place 1 Crisis card on the bottom of each stack. Shuffle only 3 stacks and place them on top of the 4th stack to form the draw deck.</p>
-                <p className="text-lg">6. Shuffle Superpower cards face down and deal 1 to each player.</p>
-                <p className="text-lg">7. Place each player token on a Community Centre. Each Community Centre must have at least 1 player token on it.</p>
-                <p className="text-lg">Strategize as a team and decide who starts first.</p>
+            <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6">
+                <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+                    <p className="font-bold">Step 1</p>
+                    <p>Choose 1 layout from the 2 above. Lay out the tiles accordingly.</p>
+                </div>
+                <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+                    <p className="font-bold">Step 2</p>
+                    <p>Shuffle remaining tiles (includes road, Green Space and Huat tiles). Deal 3 tiles to each player, face up.</p>
+                </div>
+                <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+                    <p className="font-bold">Step 3</p>
+                    <p>Randomly place remaining tiles face down to complete the 6x6 grid. Then, flip them over. Replace any Huat tiles on the grid with a road tile. </p>
+                    <br></br>
+                    <p>Note: This is to ensure that the arrangement of tiles is truly random.</p>
+                </div>
+            </div>
+            <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6">
+                <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+                    <p className="font-bold">Step 4</p>
+                    <p>Stack remaining tiles to form the draw deck.</p>
+                </div>
+                <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+                    <p className="font-bold">Step 5</p>
+                    <p>Shuffle the Crisis tiles. Keeping them face down, choose 4 randomly.</p>
+                </div>
+                <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+                    <p className="font-bold">Step 6</p>
+                    <p>Divide the draw deck into 3 roughly equal stacks. Slot 1 Crisis tile into each stack and shuffle them. Place the 3 stacks on top of the 4th Crisis tile to form the draw deck.</p>
+                    <br></br>
+                    <p>Note: This is to ensure that Crisis tile do not come into the game too early, too late, or too soon after one another.</p>
+                </div>
+            </div>
+            <div className="flex justify-center">
+                <img src="/Resourcity/images/TilesDiagram.png" alt="Shuffle Tiles" className="w-auto h-auto" />
+            </div>
+            <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6">
+                <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+                    <p className="font-bold">Step 7</p>
+                    <p>Shuffle Superpower cards face down and deal 1 to each player. Take the player token that matches the colour of your Superpower card.</p>
+                </div>
+                <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+                    <p className="font-bold">Step 8</p>
+                    <p>Place each player token on a Community Centre. Each Community Centre must have at least 1, and at most 3, player tokens on it.</p>
+                </div>
+                <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+                    <p className="font-bold">Step 9</p>
+                    <p>Hand out an Instruction Card to each player.</p>
+                </div>
+            </div>
+            <div className="text-center font-bold border-b-2 pb-16 mt-10">
+                <p className="text-2xl">Strategize as a team and decides who starts first.  </p>
             </div>
         </div>
     )

@@ -5,16 +5,16 @@ const GameBackground = () => {
     return (
         <div className="flex flex-col lg:flex-row justify-center items-center m-0">
             <div className="flex justify-center items-center">
-                <img src="/Resourcity/images/Backgroundimage.png" />
+                <img src="/Resourcity/images/Backgroundimage.png" className="w-9/12 h-full " />
             </div>
             <div className="text-left p-4">
                 <h1 className="text-4xl font-bold mb-4">The city needs your help! </h1>
-                <p className="text-lg">Due to global climate issues and overconsumption, countries are keeping resources internally. This cessation of imports poses a significant challenge for a city reliant on them for survival.</p>
+                <p className="text-lg">As climate issues and overconsumption worsen around the world, countries have started to keep resources to themselves. Supplies into the city are drastically reduced, which is a major problem for the city that relies heavily on imports to meet daily needs.</p>
                 <br></br>
                 <h1 className="text-4xl font-bold mb-4">How to play </h1>
-                <p className="text-lg">As fellow citizens, your team decides to take action to help your city become self-sustaining. </p>
+                <p className="text-lg">As fellow citizens, your team decides to take action to help your city become self-sustaining.  </p>
                 <br></br>
-                <p className="text-lg">Work together to transform the board by Rotating and Replacing tiles. Connect roads and form Farms, then Plant Crops in exchange for Resources to replenish the Resource Pool! </p>
+                <p className="text-lg">Collaborate to transform the board by Rotating and Replacing tiles. Connect roads, form Farms, and Plant Crops to replenish the Resource Pool!  </p>
                 <br></br>
                 <p className="text-lg">But be careful - every Action you take consumes Resources, and a Crisis might strike at any time! Can your team create a truly resilient city without letting the Resource Pool run out?</p>
                 <br></br>
