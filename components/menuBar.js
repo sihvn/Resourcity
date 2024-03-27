@@ -5,9 +5,6 @@ const { Header, Content, Footer, Sider } = Layout;
 
 const MenuBar = () => {
     return (
-
-
-
         <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 mb-64">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -17,7 +14,7 @@ const MenuBar = () => {
                     <Link href="/" className="hover:text-gray-500 cursor-pointer">Home</Link>
                     <Link href="/rules" className="hover:text-gray-500 cursor-pointer">Game Rules</Link>
                     <Link href="/tutorial" className="hover:text-gray-500 cursor-pointer">Tutorial</Link>
-                    <Link href="/newgame" className="hover:text-gray-500 cursor-pointer">New Game</Link>
+                    <Link href="/gamescore" className="hover:text-gray-500 cursor-pointer">Game Score</Link>
                     <Link href="/leaderboard" className="hover:text-gray-500 cursor-pointer">Leaderboard</Link>
                     <Link href="/faq" className="hover:text-gray-500 cursor-pointer">FAQ</Link>
                 </ul>

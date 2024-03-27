@@ -7,6 +7,7 @@ import { query, collection, getDocs, orderBy } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
 import MenuBar from '../../components/menuBar';
 import BaseTemplate from '../../components/baseTemplate';
+import Navbar from '../../components/navbar';
 
 import { Table } from 'antd';
 
@@ -60,19 +61,20 @@ export default function Leaderboard() {
 
     // Display data in a table form
     return (
-        <BaseTemplate>
-            <>
-                <main class="flex flex-col justify-center items-center m-0">
-                    <h1 className='text-2xl font-bold underline'>Leaderboard</h1>
 
-                    <Table dataSource={userData} columns={columns} />
+        <>
+            <Navbar />
+            <main class="flex flex-col justify-center items-center m-0">
+                <h1 className='text-2xl font-bold underline'>Leaderboard</h1>
 
-                    <h2>
-                        <Link href="/" className='hover:font-bold'>Back to home</Link>
-                    </h2>
-                </main>
-            </>
-        </BaseTemplate>
+                <Table dataSource={userData} columns={columns} />
+
+                <h2>
+                    <Link href="/" className='hover:font-bold'>Back to home</Link>
+                </h2>
+            </main>
+        </>
+
     );
 }
 

@@ -5,6 +5,7 @@ import { db } from '../firebaseConfig'
 import { collection, getDocs, addDoc } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
 import BaseTemplate from '../../components/baseTemplate';
+import Navbar from '../../components/navbar';
 
 import { Form, Input, InputNumber, Button } from 'antd';
 
@@ -57,54 +58,60 @@ export default function NewGame() {
         console.log('Failed:', errorInfo);
     };
     return (
-        <BaseTemplate>
-            <Form form={form} layout="vertical" onFinish={onFinish} onValuesChange={calculateSum}>
-                <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter a name' }]}>
-                    <Input />
-                </Form.Item>
-                <Form.Item name="totalResources" label="Total Resources" rules={[
-                    {
-                        pattern: new RegExp(/^[0-9]+$/),
-                        required: true,
-                        message: 'Please enter a number above 0 for Total Resources'
-                    }
-                ]}>
-                    <InputNumber />
-                </Form.Item>
-                <Form.Item name="maximumResources" label="Maximum Resources" rules={[
-                    {
-                        pattern: new RegExp(/^[0-9]+$/),
-                        required: true,
-                        message: 'Please enter a number above 0 for Maximum Resources'
-                    }]
-                }>
-                    <InputNumber />
-                </Form.Item>
-                <Form.Item name="minimumResources" label="Minimum Resources" rules={[
-                    {
-                        pattern: new RegExp(/^[0-9]+$/),
-                        required: true,
-                        message: 'Please enter a number above 0 for Total Resources'
-                    }]
-                }>
-                    <InputNumber />
-                </Form.Item>
-                <Form.Item name="numberOfFarms" label="Number of Farms" rules={[
-                    {
-                        pattern: new RegExp(/^[0-9]+$/),
-                        required: true,
-                        message: 'Please enter a number above 0 for Total Resources'
-                    }]
-                }>
-                    <InputNumber />
-                </Form.Item>
-                <Form.Item>
-                    <Button type="default" htmlType="submit">Submit</Button>
-                </Form.Item>
-            </Form>
+        <>
+            <Navbar />
+            <div className='flex justify-center'>
+                <Form form={form} layout="vertical" onFinish={onFinish} onValuesChange={calculateSum}>
+                    <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter a name' }]}>
+                        <Input />
+                    </Form.Item>
+                    <Form.Item name="totalResources" label="Total Resources" rules={[
+                        {
+                            pattern: new RegExp(/^[0-9]+$/),
+                            required: true,
+                            message: 'Please enter a number above 0 for Total Resources'
+                        }
+                    ]}>
+                        <InputNumber />
+                    </Form.Item>
+                    <Form.Item name="maximumResources" label="Maximum Resources" rules={[
+                        {
+                            pattern: new RegExp(/^[0-9]+$/),
+                            required: true,
+                            message: 'Please enter a number above 0 for Maximum Resources'
+                        }]
+                    }>
+                        <InputNumber />
+                    </Form.Item>
+                    <Form.Item name="minimumResources" label="Minimum Resources" rules={[
+                        {
+                            pattern: new RegExp(/^[0-9]+$/),
+                            required: true,
+                            message: 'Please enter a number above 0 for Total Resources'
+                        }]
+                    }>
+                        <InputNumber />
+                    </Form.Item>
+                    <Form.Item name="numberOfFarms" label="Number of Farms" rules={[
+                        {
+                            pattern: new RegExp(/^[0-9]+$/),
+                            required: true,
+                            message: 'Please enter a number above 0 for Total Resources'
+                        }]
+                    }>
+                        <InputNumber />
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type="default" htmlType="submit">Submit</Button>
+                    </Form.Item>
+                </Form>
+            </div>
+
             <h2 className='flex justify-center'>
                 <span className='text-center pr-4 text-gray-700'>Formula: Total Resource <b>[{tr}]</b>  - (Max Resource <b>[{mxr}]</b> - Min Resource <b>[{mir}]</b>) + Number of Farms <b>[{nof}]</b> = <b>{newScore}</b></span>
             </h2>
-        </BaseTemplate>
+        </>
+
+
     );
 }

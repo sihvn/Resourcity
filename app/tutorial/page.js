@@ -2,10 +2,13 @@
 
 import Link from 'next/link'
 import BaseTemplate from '../../components/baseTemplate';
+import Navbar from '../../components/navbar';
 
 export default function Tutorial() {
     return (
-        <BaseTemplate>
+
+        <>
+            <Navbar />
             <div className='flex items-center justify-center'>
                 <iframe
                     width='1280'
@@ -15,6 +18,8 @@ export default function Tutorial() {
                     allowfullscreen
                 />
             </div>
-        </BaseTemplate>
+        </>
+
+
     );
 }
