@@ -1,45 +1,30 @@
 // MenuBar.js
 import Link from 'next/link';
 import { Menu, Layout } from 'antd';
-
-const { Sider } = Layout;
+const { Header, Content, Footer, Sider } = Layout;
 
 const MenuBar = () => {
     return (
-        <Sider
-            breakpoint="lg"
-            collapsedWidth="0"
-            reverseArrow={true}
-            onBreakpoint={(broken) => {
-                console.log(broken);
-            }}
-            onCollapse={(collapsed, type) => {
-                console.log(collapsed, type);
-            }}
-        >
-            <div className="demo-logo-vertical" />
-            <Menu theme="dark" mode="inline">
-                <Menu.Item key="1">
-                    <Link href="/">Home</Link>
-                </Menu.Item>
-                <Menu.Item key="2">
-                    <Link href="/rules">Game Rules</Link>
-                </Menu.Item>
-                <Menu.Item key="3">
-                    <Link href="/tutorial">Tutorial</Link>
-                </Menu.Item>
-                <Menu.Item key="4">
-                    <Link href="/gamescore">New Game</Link>
-                </Menu.Item>
-                <Menu.Item key="5">
-                    <Link href="/leaderboard">Leaderboard</Link>
-                </Menu.Item>
-                <Menu.Item key="6">
-                    <Link href="/faq">FAQ</Link>
-                </Menu.Item>
-            </Menu>
 
-        </Sider>
+
+
+        <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 mb-64">
+            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="/Resourcity/images/logo.png" className="h-8" />
+                </a>
+                <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-8 md:flex-row md:mt-0" id="navbar-sticky">
+                    <Link href="/" className="hover:text-gray-500 cursor-pointer">Home</Link>
+                    <Link href="/rules" className="hover:text-gray-500 cursor-pointer">Game Rules</Link>
+                    <Link href="/tutorial" className="hover:text-gray-500 cursor-pointer">Tutorial</Link>
+                    <Link href="/newgame" className="hover:text-gray-500 cursor-pointer">New Game</Link>
+                    <Link href="/leaderboard" className="hover:text-gray-500 cursor-pointer">Leaderboard</Link>
+                    <Link href="/faq" className="hover:text-gray-500 cursor-pointer">FAQ</Link>
+                </ul>
+            </div>
+        </nav>
+
+
     )
 }
 

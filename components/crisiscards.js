@@ -28,21 +28,24 @@ const CrisisCards = () => {
     };
 
     return (
-        <div className="container mx-0 mt-5 px-0 py-0">
-            <div className="p-4 ">
+        <div className="container mx-0 mt-24 px-0 py-0">
+            <div className="mb-2 text-center ">
                 <h1 className="text-4xl font-bold mb-4">Crisis Cards </h1>
-                <p>If you drew a Crisis tile from the draw deck, follow the instructions written on the tile.  </p>
                 <br></br>
-                <p>Crisis situations may affect your Resources, Farms, Tiles or Actions.</p>
+                <p className="text-xl mb-4">If you drew a Crisis tile from the draw deck, follow the instructions written on the tile.  </p>
+                <p className="text-xl mb-10">Crisis situations may affect your Resources, Farms, Tiles or Actions.</p>
             </div>
             <div className="max-w-xl mx-auto mt-10">
                 <div className="border border-gray-200 rounded-lg shadow p-6">
                     <h1 className="text-4xl font-bold mb-4 text-center">{CrisisCardsData[currentCardIndex].title}</h1>
-                    <img src={CrisisCardsData[currentCardIndex].image} alt={CrisisCardsData[currentCardIndex].title} className="w-full rounded-lg mb-4" />
-                    {/* <p>{cardsData[currentCardIndex].content}</p> */}
-                    <div className="flex justify-between mt-4">
-                        <button onClick={prevCard} className="px-4 py-2 bg-blue-500 text-white rounded-md">Previous</button>
-                        <button onClick={nextCard} className="px-4 py-2 bg-blue-500 text-white rounded-md">Next</button>
+                    <div className="flex justify-center">
+                        <div className="flex justify-between mt-4">
+                            <button onClick={prevCard} className="px-4 py-2 bg-white text-black font-bold text-5xl rounded-md">{'<'}</button>
+                        </div>
+                        <img src={CrisisCardsData[currentCardIndex].image} alt={CrisisCardsData[currentCardIndex].title} className="w-full rounded-lg mb-4" />
+                        <div className="flex justify-between mt-4">
+                            <button onClick={nextCard} className="px-4 py-2 bg-white text-black font-bold  text-5xl rounded-md">{'>'}</button>
+                        </div>
                     </div>
                 </div>
             </div>

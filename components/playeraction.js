@@ -5,9 +5,10 @@ const PlayerAction = () => {
     return (
 
         <div className="container mx-0 mt-20 px-0 py-0">
+            <h1 className="text-4xl font-bold mb-4 text-center">During your turn </h1>
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5">
                 <div className="text-lg block max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow ">
-                    <h1 className="text-4xl font-bold mb-4 text-center">During your turn </h1>
+
                     <p className="text-lg" >A game of Resourcity is played in clockwise order. Starting with the first player, the current player does a combination of the following Actions listed below, after which it is the next player’s turn, and so on and so forth.  </p>
                     <p className="text-lg font-bold"> At the start of each player’s turn, move 1 Food and 1 Water token into the ‘Used’ pile.   </p>
                     <div className="flex items-center justify-center mb-10 mt-10">
@@ -83,9 +84,10 @@ const PlayerAction = () => {
                     </div>
                 </div>
             </div>
+            <h1 className="text-4xl font-bold mb-4 text-center">End of your turn </h1>
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5 mb-8 mt-10 text-left  border-b-2 pb-8">
                 <div className="text-lg block max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow ">
-                    <h1 className="text-4xl font-bold mb-4 text-center">End of your turn </h1>
+
                     <h2 className="text-xl font-bold mb-4">At the end of your turn,</h2>
                     <p className="text-lg">If you have 3 tiles left in your hand (ie. did not use any tiles in your hand), you must discard 1 tile into the Discard Pile. Draw 1 new tile immediately.</p>
                     <p className="text-lg">If you have less than 3 tiles left in your hand (ie. used some tiles), simply draw new tiles until you have 3 tiles in your hand.</p>

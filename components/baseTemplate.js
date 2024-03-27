@@ -96,13 +96,13 @@ const BaseTemplate = ({ children }) => {
                 </Content>
             </Layout>
 
-            <Footer
+            {/* <Footer
                 style={{
                     textAlign: 'center',
                 }}
             >
                 The Circle for Human Sustainability ©{new Date().getFullYear()} Created by SUTD ACE Capstone Group
-            </Footer>
+            </Footer> */}
         </Layout>
     );
 };

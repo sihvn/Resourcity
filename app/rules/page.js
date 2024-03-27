@@ -8,21 +8,26 @@ import FormingLoops from '../../components/formingloops';
 import Superpowers from '../../components/superpowers';
 import CrisisCards from '../../components/crisiscards';
 import GameComponent from '../../components/gamecomponents';
-// import HuatCards from '../../components/huatcards';
+import HuatCards from '../../components/huatcards';
+import Navbar from '../../components/navbar';
 
 export default function Rules() {
     return (
-        <BaseTemplate>
-            <>
-                <GameSetup />
-                <PlayerAction />
-                <FarmActions />
-                <FormingLoops />
-                <Superpowers />
-                <CrisisCards />
-                {/* <HuatCards /> */}
-                <GameComponent />
-            </>
-        </BaseTemplate>
+
+        <>
+            <Navbar />
+            <GameSetup />
+            <PlayerAction />
+            <FarmActions />
+            <FormingLoops />
+            <Superpowers />
+            <CrisisCards />
+            <HuatCards />
+            <GameComponent />
+
+
+        </>
+
+
     );
 }
