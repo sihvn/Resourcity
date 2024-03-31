@@ -77,16 +77,14 @@ const BaseTemplate = ({ children }) => {
                 <Content
                     style={{
                         margin: '24px 16px 0',
-                        padding: 24,
-                        minHeight: 280,
+
                         background: colorBgContainer,
                         borderRadius: borderRadiusLG,
                     }}
                 >
                     <div
                         style={{
-                            padding: 24,
-                            minHeight: 360,
+
                             background: colorBgContainer,
                             borderRadius: borderRadiusLG,
                         }}

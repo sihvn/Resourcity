@@ -60,6 +60,7 @@ export default function NewGame() {
     return (
         <>
             <Navbar />
+            <h1 className="text-center text-4xl font-bold mb-2 pt-6">Game Score </h1>
             <div className='flex justify-center'>
                 <Form form={form} layout="vertical" onFinish={onFinish} onValuesChange={calculateSum}>
                     <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter a name' }]}>
@@ -74,7 +75,7 @@ export default function NewGame() {
                     ]}>
                         <InputNumber />
                     </Form.Item>
-                    <Form.Item name="maximumResources" label="Maximum Resources" rules={[
+                    <Form.Item name="maximumResources" label="Number of Fuel Tokens" rules={[
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
@@ -83,7 +84,7 @@ export default function NewGame() {
                     }>
                         <InputNumber />
                     </Form.Item>
-                    <Form.Item name="minimumResources" label="Minimum Resources" rules={[
+                    <Form.Item name="minimumResources" label="Number of Water Tokens " rules={[
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
@@ -92,7 +93,16 @@ export default function NewGame() {
                     }>
                         <InputNumber />
                     </Form.Item>
-                    <Form.Item name="numberOfFarms" label="Number of Farms" rules={[
+                    <Form.Item name="minimumResources" label="Number of Food Tokens" rules={[
+                        {
+                            pattern: new RegExp(/^[0-9]+$/),
+                            required: true,
+                            message: 'Please enter a number above 0 for Total Resources'
+                        }]
+                    }>
+                        <InputNumber />
+                    </Form.Item>
+                    <Form.Item name="numberOfFarms" label="Urban City Score" rules={[
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
@@ -107,8 +117,11 @@ export default function NewGame() {
                 </Form>
             </div>
 
-            <h2 className='flex justify-center'>
-                <span className='text-center pr-4 text-gray-700'>Formula: Total Resource <b>[{tr}]</b>  - (Max Resource <b>[{mxr}]</b> - Min Resource <b>[{mir}]</b>) + Number of Farms <b>[{nof}]</b> = <b>{newScore}</b></span>
+            <h2 className='flex justify-center px-6'>
+                <span className='text-center pr-4 text-gray-700'>Urban City Score: Total number of tiles connected to Farms on the board. Remove all road tiles that are not connected to Farms from the board. The remaining number of tiles will be your Urban City Score.</span>
+            </h2>
+            <h2 className='flex justify-center px-6'>
+                <span className='text-center pr-4 text-gray-700'>Formula: Total Resource <b>[{tr}]</b>  - (Max Resource <b>[{mxr}]</b> - Min Resource <b>[{mir}]</b>) + Urban City Score<b>[{nof}]</b> = <b>{newScore}</b></span>
             </h2>
         </>
 
