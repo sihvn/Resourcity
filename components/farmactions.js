@@ -2,41 +2,55 @@
 
 const FarmActions = () => {
     return (
-        <div className="container justify-center mx-0 mt-5 px-0 py-0">
-            <h1 className="text-4xl font-bold mb-4 text-center">Farming</h1>
+        <div className="">
+            <h1 className="text-4xl font-bold mb-4 text-center bg-yellow-100 py-6">Farming</h1>
             <p className="text-lg text-center" >Farming takes place in 3 stages: Plant, Grow, Harvest.</p>
             <br></br>
-            <p className="text-lg font-bold text-center">   In each turn, you can make at most 1 farming Action per Plot.</p>
+            <p className="text-lg font-bold text-center px-4">   In each turn, you can make at most 1 farming Action per Plot.</p>
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5">
-                <div className="text-lg block max-w-6xl p-4 bg-white border border-gray-200 rounded-lg shadow ">
+                <div className="text-lg block max-w-6xl p-4 bg-lime-100 border border-gray-200 rounded-lg shadow ">
                     <h1 className="text-4xl font-bold mb-4">Plant </h1>
                     <p>First, Plant a Crop in your Farm.</p>
                     <br></br>
                     <p>Planting is 1 Action, and costs Resources. Players must be adjacent to a Plot to Plant there.</p>
                     <br></br>
                     <p className="text-lg font-bold">To Plant,</p>
-                    <p>  1. Move the Resource tokens from the Resource Pool to the Used Pile. Each Crop type requires a different number of Resources in order to be built.</p>
+                    <p>1. Move the Resource tokens
+                        <img src="/Resourcity/images/Tokens/Resource Tokens/Food.png" className="inline h-10 w-12 px-1 " />
+                        <img src="/Resourcity/images/Tokens/Resource Tokens/Fuel.png" className="inline h-10 w-12 px-1" />
+                        <img src="/Resourcity/images/Tokens/Resource Tokens/Water.png" className="inline h-10 w-12 px-1" />
+                        from the Resource Pool to the Used Pile. Each Crop type requires a different number of Resources in order to be built.</p>
                     <p>See Instruction Card</p>
-                    <p>  2. (Water Catchment only) Place a Water Catchment token on the Plot.</p>
-                    <p>  3. Place 1 corresponding Crop token on the Plot.</p>
+
+                    <p>2. (Water Catchment only) Place a Water Catchment token
+                        <img src="/Resourcity/images/Tokens/Farm Tokens/Water Catchment.png" className="inline h-12 w-13 px-1 " />
+                        on the Plot.</p>
+                    <p>3. Place 1 corresponding Crop token
+                        <img src="/Resourcity/images/Tokens/Farm Tokens/Sugar Cane.png" className="inline h-12 w-13 px-1 " />
+                        <img src="/Resourcity/images/Tokens/Farm Tokens/Sweet Potato.png" className="inline h-12 w-13 px-1 " />
+                        <img src="/Resourcity/images/Tokens/Farm Tokens/Rainwater.png" className="inline h-12 w-12 px-1" />
+                        on the Plot.</p>
                 </div>
             </div>
 
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5">
-                <div className="text-lg block max-w-6xl p-4 bg-white border border-gray-200 rounded-lg shadow ">
+                <div className="text-lg block max-w-6xl p-4 bg-yellow-100 border border-gray-200 rounded-lg shadow ">
                     <h1 className="text-4xl font-bold mb-4">Grow </h1>
                     <p>Next, Grow your Crops.</p>
                     <br></br>
-                    <p>Growing is 1 Action, and does not cost Resources. Players must be adjacent to a Plot to Grow there.      </p>
+                    <p>Growing is 1 Action, and does not cost Resources. Players must be adjacent to a Plot to Grow there.`</p>
                     <br></br>
-                    <p>To Grow Crops, place 1 Crop token on the Plot. Each Crop type needs a different number of Crop tokens before it can produce a Harvest.       </p>
+                    <p>To Grow Crops, place 1 Crop token
+                        <img src="/Resourcity/images/Tokens/Farm Tokens/Sugar Cane.png" className="inline h-12 w-13 px-1 " />
+                        <img src="/Resourcity/images/Tokens/Farm Tokens/Sweet Potato.png" className="inline h-12 w-13 px-1 " />
+                        <img src="/Resourcity/images/Tokens/Farm Tokens/Rainwater.png" className="inline h-12 w-12 px-1" />
+                        on the Plot. Each Crop type needs a different number of Crop tokens before it can produce a Harvest.       </p>
                     <br></br>
                     <div className="pr-4">
-                        <h2 class="text-lg font-semibold">Example</h2>
+                        <h2 className="text-lg font-semibold">Example</h2>
                         <p>You must have 3 Sugar Cane tokens on a Plot before you can proceed to Harvest. </p>
                     </div>
                     <div className="pl-4">
-                        <img src="/Resourcity/images/harvest.jpg" alt="Your Image" class="w-50 h-50" />
                     </div>
                     <p>Remember, in each turn, you can make at most 1 farming Action per Plot. </p>
                     <p>You can only Grow Crops on each Plot once per turn, but can Grow Crops in multiple different Plots per turn.  </p>
@@ -45,7 +59,7 @@ const FarmActions = () => {
             </div>
 
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5">
-                <div className="text-lg block max-w-6xl p-4 bg-white border border-gray-200 rounded-lg shadow ">
+                <div className="text-lg block max-w-6xl p-4 bg-blue-100 border border-gray-200 rounded-lg shadow ">
                     <h1 className="text-4xl font-bold mb-4">Harvest </h1>
                     <p>Next, Grow your Crops.</p>
                     <br></br>
@@ -54,7 +68,7 @@ const FarmActions = () => {
                     <p>To Grow Crops, place 1 Crop token on the Plot. Each Crop type needs a different number of Crop tokens before it can produce a Harvest.</p>
                     <br></br>
                     <div className="pr-4">
-                        <h2 class="text-lg font-semibold">Example</h2>
+                        <h2 className="text-lg font-semibold">Example</h2>
                         <p>Finally, you can Harvest.</p>
                         <br></br>
                         <p>Harvesting is 1 Action, and does not cost Resources. Players must be adjacent to a Plot to Harvest there.  </p>
@@ -63,13 +77,25 @@ const FarmActions = () => {
                         <p>To Harvest,</p>
                         <p>  1. Remove the complete set of Crop tokens from the board and keep them with you. (Water Catchment only) Leave the Water Catchment token in place. </p>
                         <p>  2. (Sugar Cane/Sweet Potato only) Collect 1 Compost token and immediately place it on the Plot you just Harvested from. See the Compost section below for more details.</p>
-                        <p>  3. Once you are standing on a Community Centre tile, you may exchange your Crop tokens for the corresponding Resource tokens (Move Harvested Resource tokens from ‘Used’ to the ‘Available’ pile in the Resource Pool). See the table on your Instruction Card. </p>
+                        <div className="flex flex-warp justify-center">
+                            <p> 3. Once you are standing on a Community Centre tile, you may exchange your Crop tokens
+                                <img src="/Resourcity/images/Tokens/Farm Tokens/Sugar Cane.png" className="inline h-12 w-13 px-1 " />
+                                <img src="/Resourcity/images/Tokens/Farm Tokens/Sweet Potato.png" className="inline h-12 w-13 px-1 " />
+                                <img src="/Resourcity/images/Tokens/Farm Tokens/Rainwater.png" className="inline h-12 w-12 px-1" />
+                                for the corresponding Resource tokens
+                                <img src="/Resourcity/images/Tokens/Resource Tokens/Food.png" className="inline h-10 w-12 px-1 " />
+                                <img src="/Resourcity/images/Tokens/Resource Tokens/Fuel.png" className="inline h-10 w-12 px-1" />
+                                <img src="/Resourcity/images/Tokens/Resource Tokens/Water.png" className="inline h-10 w-12 px-1" />
+                                (Move Harvested Resource tokens from ‘Used’ to the ‘Available’ pile in the Resource Pool). See the table on your Instruction Card. </p>
+                            <img src="/Resourcity/images/Tiles/Roads/Community Centre.png" className="inline h-32 w-32 px-1 " />
+                        </div>
+
                     </div>
                 </div>
             </div>
 
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5">
-                <div className="text-lg block max-w-6xl p-4 bg-white border border-gray-200 rounded-lg shadow ">
+                <div className="text-lg block max-w-6xl p-4 bg-amber-50 border border-gray-200 rounded-lg shadow ">
                     <h1 className="text-4xl font-bold mb-4">Compost</h1>
                     <p>Plots with a Compost token have healthier soil and can Grow Crops faster. </p>
                     <br></br>
@@ -77,13 +103,13 @@ const FarmActions = () => {
                     <br></br>
                     <p>Note: You must still consume Resources to Plant a Crop at that Plot. </p>
                     <br></br>
-                    <div className="pr-4">
-                        <h2 class="text-lg font-semibold">Example</h2>
+                    <h2 className="text-lg font-semibold pl-8">Example</h2>
+                    <div className="flex flex-warp justify-center py-8 px-8">
                         <p>Instead of requiring 3 Sugar Cane tokens on a Plot, you only require 2 Sugar Cane tokens and 1 Compost token before you can proceed to Harvest.</p>
+                        <img src="/Resourcity/images/composttiles.png" alt="Your Image" className="inline h-32 w-32" />
+
                     </div>
-                    <div className="pl-4">
-                        <img src="/Resourcity/images/harvest.jpg" alt="Your Image" class="w-50 h-50" />
-                    </div>
+
                     <p>When Harvesting, remove both the Compost and Crop tokens before exchanging them for Resources at any Community Centre.</p>
                 </div>
             </div>

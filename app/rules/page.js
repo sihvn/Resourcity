@@ -10,24 +10,23 @@ import CrisisCards from '../../components/crisiscards';
 import GameComponent from '../../components/gamecomponents';
 import HuatCards from '../../components/huatcards';
 import Navbar from '../../components/navbar';
+import FarmExamples from '../../components/farmexamples';
+import InsturctionCards from '../../components/Instructioncard';
 
 export default function Rules() {
     return (
-
         <>
             <Navbar />
-            <GameSetup />
+            <GameSetup id="game-setup" />
             <PlayerAction />
-            <FarmActions />
             <FormingLoops />
-            <Superpowers />
+            <FarmActions id="farm-actions" />
+            <FarmExamples />
             <CrisisCards />
             <HuatCards />
+            <Superpowers />
             <GameComponent />
-
-
+            <InsturctionCards />
         </>
-
-
     );
 }

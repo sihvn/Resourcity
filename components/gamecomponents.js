@@ -2,12 +2,11 @@
 
 const GameComponent = () => {
     return (
-        <div className="container mx-0 mt-5 px-0 py-0">
-            {/* <div class="flex justify-between"> */}
-            <div className="p-4 ">
-                <h1 className="text-4xl font-bold text-center mb-4">Game Component</h1>
-                <h2 className="text-4xl font-bold text-center mb-16">Tiles</h2>
-                <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6 mb-16">
+        <div className="">
+            <div className="p-4 pt-16">
+                <h1 className="text-4xl font-bold text-center mb-4 py-6 bg-blue-100">Game Component</h1>
+                <h2 className="text-4xl font-bold text-center py-8">Tiles</h2>
+                <div className="flex flex-wrap justify-center  mx-5 mb-16">
                     <div className="flex flex-wrap justify-center">
                         <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 my-2">
                             <img src="/Resourcity/images/Tiles/Roads/Straight Road.png" alt="road" className="w-full h-64 object-cover" />
@@ -39,7 +38,7 @@ const GameComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6 mb-16">
+                <div className="flex flex-wrap justify-center mt-10 mx-5  mb-16">
                     <div className="flex flex-wrap justify-center">
                         <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 my-2">
                             <img src="/Resourcity/images/Tiles/Roads/Green Space.png" alt="road" className="w-full h-64 object-cover" />
@@ -66,8 +65,8 @@ const GameComponent = () => {
                     </div>
                 </div>
 
-                <h2 className="text-4xl font-bold text-center mb-16">Resouce Tokens</h2>
-                <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6 mb-16">
+                <h2 className="text-4xl font-bold text-center py-8">Resouce Tokens</h2>
+                <div className="flex flex-wrap justify-center mx-5 mb-16">
                     <div className="flex flex-wrap justify-center">
                         <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 my-2">
                             <img src="/Resourcity/images/Tokens/Resource Tokens/FuelAll.png" alt="road" className="w-full h-64 object-cover" />
@@ -90,8 +89,8 @@ const GameComponent = () => {
                         </div>
                     </div>
                 </div>
-                <h2 className="text-4xl font-bold text-center mb-16">Farm Tokens</h2>
-                <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6 mb-16">
+                <h2 className="text-4xl font-bold text-center py-8">Farm Tokens</h2>
+                <div className="flex flex-wrap justify-center mx-5 mb-16">
                     <div className="flex flex-wrap justify-center">
                         <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 my-2">
                             <img src="/Resourcity/images/Tokens/Farm Tokens/Sugar Cane.png" alt="road" className="w-full h-64 object-cover" />
@@ -123,23 +122,20 @@ const GameComponent = () => {
                         </div>
                     </div>
                 </div>
-                <h2 className="text-4xl font-bold text-center mb-16">Tiles</h2>
-                <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6">
+                <div className="flex flex-wrap justify-center mx-5">
                     <div className="flex flex-wrap justify-center">
                         <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 my-2">
-                            {/* <img src="/Resourcity/images/Tiles/Roads/3-Way Road.png" alt="road" className="w-full h-64 object-cover" /> */}
+
                             <div className="font-bold text-xl mb-2 text-center">Superpower Cards x6</div>
                         </div>
                     </div>
                     <div className="flex flex-wrap justify-center">
                         <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 my-2">
-                            {/* <img src="/Resourcity/images/Tiles/Roads/3-Way Road.png" alt="road" className="w-full h-64 object-cover" /> */}
                             <div className="font-bold text-xl mb-2 text-center">Player Tokens x6</div>
                         </div>
                     </div>
                     <div className="flex flex-wrap justify-center">
                         <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 my-2">
-                            {/* <img src="/Resourcity/images/Tiles/Roads/3-Way Road.png" alt="road" className="w-full h-64 object-cover" /> */}
                             <div className="font-bold text-xl mb-2 text-center">Instruction Cards x6</div>
                         </div>
                     </div>

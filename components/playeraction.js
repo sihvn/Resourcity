@@ -4,8 +4,8 @@ import Link from 'next/link';
 const PlayerAction = () => {
     return (
 
-        <div className="container mx-0 mt-20 px-0 py-0">
-            <h1 className="text-4xl font-bold mb-4 text-center">During your turn </h1>
+        <div className="">
+            <h1 className="text-4xl font-bold mb-4 text-center bg-purple-100 py-4">During your turn </h1>
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5">
                 <div className="text-lg block max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow ">
 
@@ -25,7 +25,7 @@ const PlayerAction = () => {
                     <p className="text-lg"> You may do the same Action several times, each time counting as 1 Action. Your Superpower may change how an Action is done.  </p>
                 </div>
             </div>
-            <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6">
+            <div className="flex flex-wrap justify-center mt-10 mx-5">
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                     <img className="rounded-t-lg" src="/Resourcity/images/playermove1.png" alt="" />
                     <div className="p-5">
@@ -57,7 +57,7 @@ const PlayerAction = () => {
                 </div>
             </div>
 
-            <div className="flex flex-wrap justify-center mt-10 mx-5 space-x-6 mb-8">
+            <div className="flex flex-wrap justify-center mt-10 mx-5 mb-8">
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                     <img className="rounded-t-lg" src="/Resourcity/images/placeholder.png" alt="" />
                     <div className="p-5">
@@ -84,7 +84,7 @@ const PlayerAction = () => {
                     </div>
                 </div>
             </div>
-            <h1 className="text-4xl font-bold mb-4 text-center">End of your turn </h1>
+            <h1 className="text-4xl font-bold mb-4 text-center py-4 bg-purple-100">End of your turn </h1>
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5 mb-8 mt-10 text-left  border-b-2 pb-8">
                 <div className="text-lg block max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow ">
 

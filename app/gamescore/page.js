@@ -33,24 +33,30 @@ async function addData(teamName, score, currentDate) {
 export default function NewGame() {
 
     const [form] = Form.useForm();
+    const [newScore, setNewScore] = useState(0);
 
     // for use in the formula description
     const tr = Form.useWatch('totalResources', form);
     const mxr = Form.useWatch('maximumResources', form);
     const mir = Form.useWatch('minimumResources', form);
+    const maximumResources = Math.max(form.getFieldsValue().fuelResources, form.getFieldsValue().waterResources, form.getFieldsValue().foodResources);
+    const minimumResources = Math.min(form.getFieldsValue().fuelResources, form.getFieldsValue().waterResources, form.getFieldsValue().foodResources);
     const nof = Form.useWatch('numberOfFarms', form);
 
-    const [newScore, setNewScore] = useState(0);
+
 
     const calculateSum = () => {
-        const newScore = (form.getFieldsValue().totalResources - (form.getFieldsValue().maximumResources - form.getFieldsValue().minimumResources) + form.getFieldsValue().numberOfFarms);
+        const newScore = (form.getFieldsValue().totalResources -
+            (Math.max(form.getFieldsValue().fuelResources, form.getFieldsValue().waterResources, form.getFieldsValue().foodResources)
+                - Math.min(form.getFieldsValue().fuelResources, form.getFieldsValue().waterResources, form.getFieldsValue().foodResources))
+            + form.getFieldsValue().numberOfFarms);
         setNewScore(newScore);
     };
 
     const onFinish = async (values) => {
         // Add the current date to the form data
         const currentDate = new Date();
-        const newScore = (Number(totalResources.value) - (Number(maximumResources.value) - Number(minimumResources.value)) + Number(numberOfFarms.value));
+        const newScore = (Number(totalResources.value) - maximumResources - minimumResources + Number(numberOfFarms.value));
         const added = await addData(values.name, newScore, currentDate);
         console.log('Success:', values, currentDate);
     };
@@ -75,7 +81,7 @@ export default function NewGame() {
                     ]}>
                         <InputNumber />
                     </Form.Item>
-                    <Form.Item name="maximumResources" label="Number of Fuel Tokens" rules={[
+                    <Form.Item name="fuelResources" label="Number of Fuel Tokens" rules={[
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
@@ -84,7 +90,7 @@ export default function NewGame() {
                     }>
                         <InputNumber />
                     </Form.Item>
-                    <Form.Item name="minimumResources" label="Number of Water Tokens " rules={[
+                    <Form.Item name="waterResources" label="Number of Water Tokens " rules={[
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
@@ -93,7 +99,7 @@ export default function NewGame() {
                     }>
                         <InputNumber />
                     </Form.Item>
-                    <Form.Item name="minimumResources" label="Number of Food Tokens" rules={[
+                    <Form.Item name="foodResources" label="Number of Food Tokens" rules={[
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
@@ -120,8 +126,8 @@ export default function NewGame() {
             <h2 className='flex justify-center px-6'>
                 <span className='text-center pr-4 text-gray-700'>Urban City Score: Total number of tiles connected to Farms on the board. Remove all road tiles that are not connected to Farms from the board. The remaining number of tiles will be your Urban City Score.</span>
             </h2>
-            <h2 className='flex justify-center px-6'>
-                <span className='text-center pr-4 text-gray-700'>Formula: Total Resource <b>[{tr}]</b>  - (Max Resource <b>[{mxr}]</b> - Min Resource <b>[{mir}]</b>) + Urban City Score<b>[{nof}]</b> = <b>{newScore}</b></span>
+            <h2 className='flex justify-center px-6 py-6'>
+                <span className='text-center pr-4 text-gray-700'>Formula: Total Resource <b>[{tr}]</b>  - (Max Resource <b>[{maximumResources}]</b> - Min Resource <b>[{minimumResources}]</b>) + Urban City Score<b>[{nof}]</b> = <b>{newScore}</b></span>
             </h2>
         </>
 

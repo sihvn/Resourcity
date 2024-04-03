@@ -22,15 +22,14 @@ const HuatCards = () => {
         );
     };
     return (
-        <div className="container mx-0 mt-24 px-0 py-0 mb-24">
+        <div className="">
             <div className="mb-2 text-center ">
-                <h1 className="text-4xl font-bold mb-4">Huat Cards </h1>
-                <p className="text-xl mb-4">If you drew a Huat (發) tile from the draw deck, follow the instructions written on the tile.   </p>
+                <h1 className="text-4xl font-bold mb-4 py-6 bg-orange-100">Huat Cards </h1>
                 <br></br>
-                <p className="text-xl mb-4">They include community and chance situations that positively affect your Resources, Farms or Actions.</p>
-                <br></br>
+                <p className="text-xl mb-4 px-6">If you drew a Huat (發) tile from the draw deck, follow the instructions written on the tile.   </p>
+                <p className="text-xl mb-4 px-6">They include community and chance situations that positively affect your Resources, Farms or Actions.</p>
             </div>
-            <div className="max-w-xl mx-auto mt-10">
+            <div className="max-w-xl mx-auto mt-10 px-16">
                 <div className="border border-gray-200 rounded-lg shadow p-6">
                     <h1 className="text-4xl font-bold mb-4 text-center">{HuatCardsData[currentCardIndex1].title}</h1>
                     <div className="flex justify-center">

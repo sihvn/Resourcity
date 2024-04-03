@@ -30,7 +30,8 @@ const BaseTemplate = ({ children }) => {
                     padding: 0,
                     background: colorBgContainer,
                     display: 'flex', // Add flex display to align items horizontally
-
+                    position: 'fixed',
+                    width: '100%'
                 }}
             >
                 <Button
@@ -45,6 +46,7 @@ const BaseTemplate = ({ children }) => {
                 <img src="/Resourcity/images/logo.png" className="h-16" />
 
             </Header>
+            <Content style={{ paddingTop: 32 }}></Content>
 
             <Layout>
                 <Drawer

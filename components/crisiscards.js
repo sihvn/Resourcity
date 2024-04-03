@@ -28,14 +28,14 @@ const CrisisCards = () => {
     };
 
     return (
-        <div className="container mx-0 mt-24 px-0 py-0">
+        <div className="">
             <div className="mb-2 text-center ">
-                <h1 className="text-4xl font-bold mb-4">Crisis Cards </h1>
+                <h1 className="text-4xl font-bold mb-4 py-6 bg-orange-100">Crisis Cards </h1>
                 <br></br>
-                <p className="text-xl mb-4">If you drew a Crisis tile from the draw deck, follow the instructions written on the tile.  </p>
-                <p className="text-xl mb-10">Crisis situations may affect your Resources, Farms, Tiles or Actions.</p>
+                <p className="text-xl mb-4 px-6">If you drew a Crisis tile from the draw deck, follow the instructions written on the tile.  </p>
+                <p className="text-xl mb-10 px-6">Crisis situations may affect your Resources, Farms, Tiles or Actions.</p>
             </div>
-            <div className="max-w-xl mx-auto mt-10">
+            <div className="max-w-xl mx-auto mt-10 px-16">
                 <div className="border border-gray-200 rounded-lg shadow p-6">
                     <h1 className="text-4xl font-bold mb-4 text-center">{CrisisCardsData[currentCardIndex].title}</h1>
                     <div className="flex justify-center">

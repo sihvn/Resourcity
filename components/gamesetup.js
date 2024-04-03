@@ -2,9 +2,9 @@
 
 const GameSetup = () => {
     return (
-        <div className="container mx-0 px-0 py-0">
+        <div className="">
             <div className="mb-2 text-center ">
-                <h1 className="text-4xl font-bold mb-2 py-6">Set Up </h1>
+                <h1 className="text-4xl font-bold mb-2 py-4 bg-teal-100">Set Up </h1>
                 <p className="text-lg">To begin, you will need to set up the game. </p>
             </div>
             <div className="flex items-center justify-center mb-10 mt-10 ">
@@ -51,7 +51,7 @@ const GameSetup = () => {
                 </div>
             </div>
             <div className="flex justify-center">
-                <img src="/Resourcity/images/TilesDiagram.png" alt="Shuffle Tiles" className="w-auto h-auto" />
+                <img src="/Resourcity/images/TilesDiagram.png" alt="Shuffle Tiles" className="w-1/2 h-auto" />
             </div>
             <div className="flex flex-wrap justify-center mt-10 mx-5">
                 <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow ">

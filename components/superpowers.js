@@ -25,14 +25,25 @@ const Superpowers = () => {
     };
 
     return (
-        <div className="max-w-xl mx-auto mt-10">
-            <div className="border border-gray-200 rounded-lg shadow p-6">
-                <h1 className="text-4xl font-bold mb-4 text-center">{cardsData[currentCardIndex].title}</h1>
-                <img src={cardsData[currentCardIndex].image} alt={cardsData[currentCardIndex].title} className="w-full rounded-lg mb-4" />
-                {/* <p>{cardsData[currentCardIndex].content}</p> */}
-                <div className="flex justify-between mt-4">
-                    <button onClick={prevCard} className="px-4 py-2 bg-blue-500 text-white rounded-md">Previous</button>
-                    <button onClick={nextCard} className="px-4 py-2 bg-blue-500 text-white rounded-md">Next</button>
+        <div className="">
+            <div className="mb-2 text-center ">
+                <h1 className="text-4xl font-bold mb-4 py-6 bg-orange-100">Superpowers</h1>
+                <br></br>
+                <p className="text-xl mb-4 px-6">You may use your Superpower during your turn only. </p>
+            </div>
+            <div className="max-w-xl mx-auto px-16 mt-10">
+                <div className="border border-gray-200 rounded-lg shadow p-6">
+
+                    <h1 className="text-4xl font-bold mb-4 text-center">{cardsData[currentCardIndex].title}</h1>
+                    <div className="flex justify-center">
+                        <div className="flex justify-between mt-4">
+                            <button onClick={prevCard} className="px-4 py-2 bg-white text-black font-bold text-5xl rounded-md">{'<'}</button>
+                        </div>
+                        <img src={cardsData[currentCardIndex].image} alt={cardsData[currentCardIndex].title} className="w-full rounded-lg mb-4" />
+                        <div className="flex justify-between mt-4">
+                            <button onClick={nextCard} className="px-4 py-2 bg-white text-black font-bold  text-5xl rounded-md">{'>'}</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
