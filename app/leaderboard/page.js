@@ -65,7 +65,7 @@ export default function Leaderboard() {
         <>
             <Navbar />
             <main class="flex flex-col justify-center items-center m-0">
-                <h1 className='text-2xl font-bold underline'>Leaderboard</h1>
+                <h1 className='text-center text-4xl font-bold mb-6 py-6'>Leaderboard</h1>
 
                 <Table dataSource={userData} columns={columns} />
 
