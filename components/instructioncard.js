@@ -1,6 +1,6 @@
 // InsturctionCards.js
 
-const InsturctionCards = () => {
+const InstructionCards = () => {
     return (
         <div>
             <h1 className="text-4xl text-center font-bold py-6 bg-pink-100">Instruction Card</h1>
@@ -17,4 +17,4 @@ const InsturctionCards = () => {
     )
 
 }
-export default InsturctionCards;
+export default InstructionCards;

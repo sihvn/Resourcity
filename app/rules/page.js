@@ -11,7 +11,7 @@ import GameComponent from '../../components/gamecomponents';
 import HuatCards from '../../components/huatcards';
 import Navbar from '../../components/navbar';
 import FarmExamples from '../../components/farmexamples';
-import InsturctionCards from '../../components/instructioncard';
+import InstructionCards from '../../components/instructioncard';
 
 export default function Rules() {
     return (
@@ -26,7 +26,7 @@ export default function Rules() {
             <HuatCards />
             <Superpowers />
             <GameComponent />
-            <InsturctionCards />
+            <InstructionCards />
         </>
     );
 }
