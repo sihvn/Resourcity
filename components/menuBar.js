@@ -21,7 +21,7 @@ const MenuBar = () => {
                     <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-8 md:flex-row md:mt-0" id="navbar-sticky">
                         <Link href="/" className="hover:text-gray-500 cursor-pointer">Home</Link>
                         <li className='dropdown'>
-                            <Link href="/rules/gamesetup" className="hover:text-gray-500 cursor-pointer">Game Rules</Link>
+                            <Link href="/rules" className="hover:text-gray-500 cursor-pointer">Game Rules</Link>
                             {/* <ul className='dropdown-content'>
                                 <li><a href="#game-setup" className="hover:text-gray-500 cursor-pointer" onClick={(e) => handleClick(e, 'game-setup')}>Game Setup</a></li>
                                 <li><a href="#farm-actions" className="hover:text-gray-500 cursor-pointer" onClick={(e) => handleClick(e, 'farm-actions')}>Farm Actions</a></li>
