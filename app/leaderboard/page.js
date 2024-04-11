@@ -61,17 +61,11 @@ export default function Leaderboard() {
 
     // Display data in a table form
     return (
-
         <>
             <Navbar />
             <main class="flex flex-col justify-center items-center m-0">
                 <h1 className='text-center text-4xl font-bold mb-6 py-6'>Leaderboard</h1>
-
                 <Table dataSource={userData} columns={columns} />
-
-                <h2>
-                    <Link href="/" className='hover:font-bold'>Back to home</Link>
-                </h2>
             </main>
         </>
 

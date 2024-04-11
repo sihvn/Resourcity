@@ -7,8 +7,9 @@ import React, { useState, useEffect } from 'react';
 import BaseTemplate from '../../components/baseTemplate';
 import Navbar from '../../components/navbar';
 
-import { Form, Input, InputNumber, Button } from 'antd';
+import { Form, Input, InputNumber, Button, Select } from 'antd';
 
+const { Option } = Select;
 // Add document to collection
 // TODO to be moved to another file for neatness
 async function addData(teamName, score, currentDate) {
@@ -63,6 +64,29 @@ export default function NewGame() {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
+
+    const CrisisSelect = ({ name, label }) => (
+        <Form.Item
+            name={name}
+            label={label}
+            rules={[{ required: false, message: 'Please select your crisis!' }]}
+        >
+            <Select placeholder="Select an option" allowClear>
+                <Option value="option1">None</Option>
+                <Option value="option2">Blight</Option>
+                <Option value="option3">Drought</Option>
+                <Option value="option4">Earthquake</Option>
+                <Option value="option5">Fuel Crisis</Option>
+                <Option value="option6">Manpower Shortage</Option>
+                <Option value="option7">Monsoon Rain</Option>
+                <Option value="option8">Pandemic</Option>
+                <Option value="option9">Pests</Option>
+                <Option value="option10">Sea Level Rise</Option>
+                <Option value="option11">Trade Embargo</Option>
+            </Select>
+        </Form.Item>
+    );
+
     return (
         <>
             <Navbar />
@@ -116,6 +140,42 @@ export default function NewGame() {
                         }]
                     }>
                         <InputNumber />
+                    </Form.Item>
+                    <Form.Item name="crisis1" label="Crisis 1" rules={[
+                        {
+                            pattern: new RegExp(/^[0-9]+$/),
+                            required: true,
+                            message: 'Please Select a Crisis'
+                        }]
+                    }>
+                        <CrisisSelect />
+                    </Form.Item>
+                    <Form.Item name="crisis2" label="Crisis 2" rules={[
+                        {
+                            pattern: new RegExp(/^[0-9]+$/),
+                            required: true,
+                            message: 'Please Select a Crisis'
+                        }]
+                    }>
+                        <CrisisSelect />
+                    </Form.Item>
+                    <Form.Item name="crisis3" label="Crisis 3" rules={[
+                        {
+                            pattern: new RegExp(/^[0-9]+$/),
+                            required: true,
+                            message: 'Please Select a Crisis'
+                        }]
+                    }>
+                        <CrisisSelect />
+                    </Form.Item>
+                    <Form.Item name="crisis4" label="Crisis 4" rules={[
+                        {
+                            pattern: new RegExp(/^[0-9]+$/),
+                            required: true,
+                            message: 'Please Select a Crisis'
+                        }]
+                    }>
+                        <CrisisSelect />
                     </Form.Item>
                     <Form.Item>
                         <Button type="default" htmlType="submit">Submit</Button>
