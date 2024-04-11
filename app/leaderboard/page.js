@@ -32,6 +32,10 @@ async function fetchData() {
 export default function Leaderboard() {
     const [userData, setUserData] = useState([]);
 
+    const paginationConfig = {
+        position: ["bottomCenter"],
+    };
+
     // Use fetchData to get data from firestore
     useEffect(() => {
         async function fetchDataFromFirestore() {
@@ -56,6 +60,26 @@ export default function Leaderboard() {
             title: 'Date',
             dataIndex: 'Date',
             key: 'Date',
+        },
+        {
+            title: 'Crisis 1',
+            dataIndex: 'Crisis1',
+            key: 'Crisis1',
+        },
+        {
+            title: 'Crisis 2',
+            dataIndex: 'Crisis2',
+            key: 'Crisis2',
+        },
+        {
+            title: 'Crisis 3',
+            dataIndex: 'Crisis3',
+            key: 'Crisis3',
+        },
+        {
+            title: 'Crisis 4',
+            dataIndex: 'Crisis4',
+            key: 'Crisis4',
         }
         // Add more columns as needed
     ];
@@ -64,9 +88,9 @@ export default function Leaderboard() {
     return (
         <>
             <Navbar />
-            <main class="flex flex-col justify-center items-center m-0">
+            <main className="flex flex-col justify-center items-center m-0">
                 <h1 className='text-center text-4xl font-bold mb-6 py-6'>Leaderboard</h1>
-                <Table dataSource={userData} columns={columns} />
+                <Table dataSource={userData} columns={columns} pagination={paginationConfig} />
             </main>
             <Footer1 />
         </>

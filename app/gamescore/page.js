@@ -12,13 +12,17 @@ import { Form, Input, InputNumber, Button, Select, Modal } from 'antd';
 const { Option } = Select;
 // Add document to collection
 // TODO to be moved to another file for neatness
-async function addData(teamName, score, currentDate) {
+async function addData(teamName, score, currentDate, crisis1, crisis2, crisis3, crisis4) {
     try {
         const colRef = collection(db, "Highscore");
         const docRef = await addDoc(colRef, {
             TeamName: teamName,
             Score: Number(score),
-            Date: currentDate
+            Date: currentDate,
+            Crisis1: crisis1,
+            Crisis2: crisis2,
+            Crisis3: crisis3,
+            Crisis4: crisis4
         });
         console.log("Document written with ID: ", docRef.id);
         return true;
@@ -57,8 +61,8 @@ export default function NewGame() {
     const onFinish = async (values) => {
         // Add the current date to the form data
         const currentDate = new Date();
-        const newScore = (Number(totalResources.value) - maximumResources - minimumResources + Number(numberOfFarms.value));
-        const added = await addData(values.name, newScore, currentDate);
+        const newScore = (Number(totalResources.value) - (maximumResources - minimumResources) + Number(numberOfFarms.value));
+        const added = await addData(values.name, newScore, currentDate, values.crisis1, values.crisis2, values.crisis3, values.crisis4);
         setIsModalVisible(true);
         console.log('Success:', values, currentDate);
     };
@@ -66,27 +70,32 @@ export default function NewGame() {
         console.log('Failed:', errorInfo);
     };
 
-    const CrisisSelect = ({ name, label }) => (
-        <Form.Item
-            name={name}
-            label={label}
-            rules={[{ required: false, message: 'Please select your crisis!' }]}
-        >
-            <Select placeholder="Select an option" allowClear>
-                <Option value="option1">None</Option>
-                <Option value="option2">Blight</Option>
-                <Option value="option3">Drought</Option>
-                <Option value="option4">Earthquake</Option>
-                <Option value="option5">Fuel Crisis</Option>
-                <Option value="option6">Manpower Shortage</Option>
-                <Option value="option7">Monsoon Rain</Option>
-                <Option value="option8">Pandemic</Option>
-                <Option value="option9">Pests</Option>
-                <Option value="option10">Sea Level Rise</Option>
-                <Option value="option11">Trade Embargo</Option>
-            </Select>
-        </Form.Item>
-    );
+    const CrisisSelect = ({ name, label }) => {
+        return (
+            <Form.Item
+                name={name}
+                label={label}
+                rules={[{ required: true, message: 'Please select a crisis' }]}
+            >
+                <Select
+                    placeholder="Select an option"
+                    allowClear
+                >
+                    <Option value="None">None</Option>
+                    <Option value="Blight">Blight</Option>
+                    <Option value="Drought">Drought</Option>
+                    <Option value="Earthquake">Earthquake</Option>
+                    <Option value="Fuel Crisis">Fuel Crisis</Option>
+                    <Option value="Manpower Shortage">Manpower Shortage</Option>
+                    <Option value="Monsoon Rain">Monsoon Rain</Option>
+                    <Option value="Pandemic">Pandemic</Option>
+                    <Option value="Pests">Pests</Option>
+                    <Option value="Sea Level Rise">Sea Level Rise</Option>
+                    <Option value="Trade Embargo">Trade Embargo</Option>
+                </Select>
+            </Form.Item>
+        );
+    };
 
 
     return (
@@ -143,42 +152,12 @@ export default function NewGame() {
                     }>
                         <InputNumber />
                     </Form.Item>
-                    <Form.Item name="crisis1" label="Crisis 1" rules={[
-                        {
-                            pattern: new RegExp(/^[0-9]+$/),
-                            required: true,
-                            message: 'Please Select a Crisis'
-                        }]
-                    }>
-                        <CrisisSelect />
-                    </Form.Item>
-                    <Form.Item name="crisis2" label="Crisis 2" rules={[
-                        {
-                            pattern: new RegExp(/^[0-9]+$/),
-                            required: true,
-                            message: 'Please Select a Crisis'
-                        }]
-                    }>
-                        <CrisisSelect />
-                    </Form.Item>
-                    <Form.Item name="crisis3" label="Crisis 3" rules={[
-                        {
-                            pattern: new RegExp(/^[0-9]+$/),
-                            required: true,
-                            message: 'Please Select a Crisis'
-                        }]
-                    }>
-                        <CrisisSelect />
-                    </Form.Item>
-                    <Form.Item name="crisis4" label="Crisis 4" rules={[
-                        {
-                            pattern: new RegExp(/^[0-9]+$/),
-                            required: true,
-                            message: 'Please Select a Crisis'
-                        }]
-                    }>
-                        <CrisisSelect />
-                    </Form.Item>
+
+                    <CrisisSelect name="crisis1" label="Crisis 1" />
+                    <CrisisSelect name="crisis2" label="Crisis 2" />
+                    <CrisisSelect name="crisis3" label="Crisis 3" />
+                    <CrisisSelect name="crisis4" label="Crisis 4" />
+
                     <Form.Item>
                         <Button type="default" htmlType="submit">Submit</Button>
                     </Form.Item>
@@ -190,7 +169,7 @@ export default function NewGame() {
                     onCancel={() => setIsModalVisible(false)}
                 >
                     <p>Your form has been submitted successfully!</p>
-                    <p><Link href="/leaderboard"><a className="hover:text-gray-500 cursor-pointer">Go To Leaderboard</a></Link></p>
+                    <p><Link href="/leaderboard" className="hover:text-gray-500 cursor-pointer">Go To Leaderboard</Link></p>
                 </Modal>
             </div>
 
