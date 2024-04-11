@@ -21,9 +21,9 @@ const FormingLoops = () => {
                     </ul>
 
 
-                    <div class="flex flex-row justify-center items-center mb-4 md:mb-0 py-8 px-16">
-                        <img src="/Resourcity/images/formingloop3.png" class="w-56 h-auto object-cover" alt="Image 1" />
-                        <img src="/Resourcity/images/formingloop2.png" class="w-56 h-auto object-cover mt-2" alt="Image 2" />
+                    <div class="flex flex-col justify-center items-center mb-4 md:mb-0 py-8">
+                        <img src="/Resourcity/images/formingloop3.png" class="w-64 h-auto object-cover" alt="Image 1" />
+                        <img src="/Resourcity/images/formingloop2.png" class="w-64 h-auto object-cover mt-2" alt="Image 2" />
                     </div>
 
 

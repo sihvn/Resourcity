@@ -33,8 +33,7 @@ const Superpowers = () => {
             </div>
             <div className="max-w-xl mx-auto px-16 mt-10">
                 <div className="border border-gray-200 rounded-lg shadow p-6">
-
-                    <h1 className="text-4xl font-bold mb-4 text-center">{cardsData[currentCardIndex].title}</h1>
+                    {/* <h1 className="text-4xl font-bold mb-4 text-center">{cardsData[currentCardIndex].title}</h1> */}
                     <div className="flex justify-center">
                         <div className="flex justify-between mt-4">
                             <button onClick={prevCard} className="px-4 py-2 bg-white text-black font-bold text-5xl rounded-md">{'<'}</button>

@@ -143,6 +143,7 @@ const GameComponent = () => {
 
 
 
+
             </div>
         </div>
     )

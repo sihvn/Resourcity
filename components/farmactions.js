@@ -74,9 +74,12 @@ const FarmActions = () => {
                         <p>Harvesting is 1 Action, and does not cost Resources. Players must be adjacent to a Plot to Harvest there.  </p>
                         <br></br>
                         <p>Once a Plot has reached the number of Crop tokens required for a Harvest, you must Harvest all Crop tokens from that Plot.</p>
+                        <br></br>
                         <p>To Harvest,</p>
+                        <br></br>
                         <p>  1. Remove the complete set of Crop tokens from the board and keep them with you. (Water Catchment only) Leave the Water Catchment token in place. </p>
                         <p>  2. (Sugar Cane/Sweet Potato only) Collect 1 Compost token and immediately place it on the Plot you just Harvested from. See the Compost section below for more details.</p>
+                        <img src="/Resourcity/images/Tiles/Roads/Community Centre.png" className=" inline h-32 w-32 px-1 " />
                         <div className="flex flex-warp justify-center">
                             <p> 3. Once you are standing on a Community Centre tile, you may exchange your Crop tokens
                                 <img src="/Resourcity/images/Tokens/Farm Tokens/Sugar Cane.png" className="inline h-12 w-13 px-1 " />
@@ -87,7 +90,7 @@ const FarmActions = () => {
                                 <img src="/Resourcity/images/Tokens/Resource Tokens/Fuel.png" className="inline h-10 w-12 px-1" />
                                 <img src="/Resourcity/images/Tokens/Resource Tokens/Water.png" className="inline h-10 w-12 px-1" />
                                 (Move Harvested Resource tokens from ‘Used’ to the ‘Available’ pile in the Resource Pool). See the table on your Instruction Card. </p>
-                            <img src="/Resourcity/images/Tiles/Roads/Community Centre.png" className="inline h-32 w-32 px-1 " />
+
                         </div>
 
                     </div>
@@ -103,12 +106,9 @@ const FarmActions = () => {
                     <br></br>
                     <p>Note: You must still consume Resources to Plant a Crop at that Plot. </p>
                     <br></br>
-                    <h2 className="text-lg font-semibold pl-8">Example</h2>
-                    <div className="flex flex-warp justify-center py-8 px-8">
-                        <p>Instead of requiring 3 Sugar Cane tokens on a Plot, you only require 2 Sugar Cane tokens and 1 Compost token before you can proceed to Harvest.</p>
-                        <img src="/Resourcity/images/composttiles.png" alt="Your Image" className="inline h-32 w-32" />
-
-                    </div>
+                    <img src="/Resourcity/images/composttiles.png" alt="Your Image" className="inline h-32 w-32" />
+                    <h2 className="text-lg font-semibold">Example</h2>
+                    <p>Instead of requiring 3 Sugar Cane tokens on a Plot, you only require 2 Sugar Cane tokens and 1 Compost token before you can proceed to Harvest.</p>
 
                     <p>When Harvesting, remove both the Compost and Crop tokens before exchanging them for Resources at any Community Centre.</p>
                 </div>

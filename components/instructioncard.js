@@ -1,4 +1,5 @@
 // InsturctionCards.js
+import Link from 'next/link';
 
 const InstructionCards = () => {
     return (
@@ -11,6 +12,9 @@ const InstructionCards = () => {
                 <div className="flex justify-center items-center py-5 px-8">
                     <img src="/Resourcity/images/InstructionCardBack.png" className="w-9/12 h-full " />
                 </div>
+            </div>
+            <div className="text-center font-bold border-b-2 pb-16 mt-10 px-4">
+                <Link href="/tutorial" className="text-2xl hover:text-gray-500 cursor-pointer">Watch our instructional video before starting the game.</Link>
             </div>
         </div>
 
