@@ -13,7 +13,7 @@ export default function Tutorial() {
                 <iframe
                     width='1280'
                     height='720'
-                    src="https://www.youtube.com/embed/Fhwp9i6P110"
+                    src="https://www.youtube.com/embed/4U9iDY_4Tag"
                     frameborder="0"
                     allowfullscreen
                 />
