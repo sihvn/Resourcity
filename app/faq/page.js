@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import BaseTemplate from '../../components/baseTemplate';
 import Navbar from '../../components/navbar';
+import Footer1 from '../../components/footer';
 
 export default function FAQ() {
     const toggleAnswer = (index) => {
@@ -13,7 +14,7 @@ export default function FAQ() {
     return (
         <>
             <Navbar />
-            <div className="container mx-auto mt-10 px-4">
+            <div className="container mx-auto mt-10 px-4 mb-16">
                 <h1 className="text-4xl font-bold mb-8 text-center">Frequently Asked Questions</h1>
 
                 <div className="max-w-3xl mx-auto px-5">
@@ -38,6 +39,7 @@ export default function FAQ() {
                     {/* Add more FAQ items as needed */}
                 </div>
             </div>
+            <Footer1 />
         </>
 
     );

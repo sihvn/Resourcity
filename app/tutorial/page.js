@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import BaseTemplate from '../../components/baseTemplate';
 import Navbar from '../../components/navbar';
+import Footer1 from '../../components/footer';
 
 export default function Tutorial() {
     return (
@@ -18,6 +19,7 @@ export default function Tutorial() {
                     allowfullscreen
                 />
             </div>
+            <Footer1 />
         </>
 
 

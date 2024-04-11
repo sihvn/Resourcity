@@ -12,6 +12,7 @@ import HuatCards from '../../components/huatcards';
 import Navbar from '../../components/navbar';
 import FarmExamples from '../../components/farmexamples';
 import InstructionCards from '../../components/instructioncard';
+import Footer1 from '../../components/footer';
 
 export default function Rules() {
     return (
@@ -27,6 +28,7 @@ export default function Rules() {
             <Superpowers />
             <GameComponent />
             <InstructionCards />
+            <Footer1 />
         </>
     );
 }

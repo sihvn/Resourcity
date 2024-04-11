@@ -10,6 +10,7 @@ import BaseTemplate from '../../components/baseTemplate';
 import Navbar from '../../components/navbar';
 
 import { Table } from 'antd';
+import Footer1 from '../../components/footer';
 
 // Get documents from collection
 async function fetchData() {
@@ -67,6 +68,7 @@ export default function Leaderboard() {
                 <h1 className='text-center text-4xl font-bold mb-6 py-6'>Leaderboard</h1>
                 <Table dataSource={userData} columns={columns} />
             </main>
+            <Footer1 />
         </>
 
     );

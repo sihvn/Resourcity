@@ -6,7 +6,7 @@ import { collection, getDocs, addDoc } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
 import BaseTemplate from '../../components/baseTemplate';
 import Navbar from '../../components/navbar';
-
+import Footer1 from '../../components/footer';
 import { Form, Input, InputNumber, Button, Select } from 'antd';
 
 const { Option } = Select;
@@ -189,6 +189,7 @@ export default function NewGame() {
             <h2 className='flex justify-center px-6 py-6'>
                 <span className='text-center pr-4 text-gray-700'>Formula: Total Resource <b>[{tr}]</b>  - (Max Resource <b>[{maximumResources}]</b> - Min Resource <b>[{minimumResources}]</b>) + Urban City Score<b>[{nof}]</b> = <b>{newScore}</b></span>
             </h2>
+            <Footer1 />
         </>
 
 
