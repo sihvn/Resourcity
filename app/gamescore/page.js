@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import BaseTemplate from '../../components/baseTemplate';
 import Navbar from '../../components/navbar';
 import Footer1 from '../../components/footer';
-import { Form, Input, InputNumber, Button, Select } from 'antd';
+import { Form, Input, InputNumber, Button, Select, Modal } from 'antd';
 
 const { Option } = Select;
 // Add document to collection
@@ -44,7 +44,7 @@ export default function NewGame() {
     const minimumResources = Math.min(form.getFieldsValue().fuelResources, form.getFieldsValue().waterResources, form.getFieldsValue().foodResources);
     const nof = Form.useWatch('numberOfFarms', form);
 
-
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
     const calculateSum = () => {
         const newScore = (form.getFieldsValue().totalResources -
@@ -59,6 +59,7 @@ export default function NewGame() {
         const currentDate = new Date();
         const newScore = (Number(totalResources.value) - maximumResources - minimumResources + Number(numberOfFarms.value));
         const added = await addData(values.name, newScore, currentDate);
+        setIsModalVisible(true);
         console.log('Success:', values, currentDate);
     };
     const onFinishFailed = (errorInfo) => {
@@ -86,6 +87,7 @@ export default function NewGame() {
             </Select>
         </Form.Item>
     );
+
 
     return (
         <>
@@ -181,6 +183,15 @@ export default function NewGame() {
                         <Button type="default" htmlType="submit">Submit</Button>
                     </Form.Item>
                 </Form>
+                <Modal
+                    title="Submission Successful"
+                    open={isModalVisible}
+                    onOk={() => setIsModalVisible(false)}
+                    onCancel={() => setIsModalVisible(false)}
+                >
+                    <p>Your form has been submitted successfully!</p>
+                    <p><Link href="/leaderboard"><a className="hover:text-gray-500 cursor-pointer">Go To Leaderboard</a></Link></p>
+                </Modal>
             </div>
 
             <h2 className='flex justify-center px-6'>

@@ -4,9 +4,6 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { Layout, Drawer, Button, Menu, theme } from 'antd';
-// import GameBackground from './gamebackground';
-// import MenuBar from './menuBar';
-// import Base from 'antd/es/typography/Base';
 
 const { Header, Content, Footer, Sider } = Layout;
 const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
@@ -22,6 +19,21 @@ const BaseTemplate = ({ children }) => {
     } = theme.useToken();
 
     const [collapsed, setCollapsed] = useState(true);
+
+    const handleClick = (id) => {
+        setCollapsed(!collapsed); // Close the drawer upon clicking an item
+        const element = document.getElementById(id);
+        if (element) {
+            const headerOffset = 64; // The offset you want above the element after scrolling
+            const elementPosition = element.getBoundingClientRect().top; // Element's position relative to the viewport
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
 
     return (
         <Layout>
@@ -54,23 +66,52 @@ const BaseTemplate = ({ children }) => {
                     open={!collapsed}
                     placement='left'
                 >
-                    <Menu theme="light" mode="inline">
+                    <Menu theme="light" mode="inline" onClick={() => setCollapsed(!collapsed)}>
                         <Menu.Item key="1">
                             <Link href="/">Home</Link>
                         </Menu.Item>
-                        <Menu.Item key="2">
-                            <Link href="/rules">Game Rules</Link>
-                        </Menu.Item>
-                        <Menu.Item key="3">
+                        <Menu.SubMenu key="gameRules" title="Game Rules">
+                            <Menu.Item key="2" onClick={() => handleClick('game-setup')}>
+                                Game Setup
+                            </Menu.Item>
+                            <Menu.Item key="3" onClick={() => handleClick('player-actions')}>
+                                Player Actions
+                            </Menu.Item>
+                            <Menu.Item key="4" onClick={() => handleClick('forming-loops')}>
+                                Forming Loops
+                            </Menu.Item>
+                            <Menu.Item key="5" onClick={() => handleClick('farm-actions')}>
+                                Farm Actions
+                            </Menu.Item>
+                            <Menu.Item key="6" onClick={() => handleClick('farm-examples')}>
+                                Farm Examples
+                            </Menu.Item>
+                            <Menu.Item key="7" onClick={() => handleClick('crisis-cards')}>
+                                Crisis Cards
+                            </Menu.Item>
+                            <Menu.Item key="8" onClick={() => handleClick('huat-cards')}>
+                                Huat Cards
+                            </Menu.Item>
+                            <Menu.Item key="9" onClick={() => handleClick('super-powers')}>
+                                Superpowers
+                            </Menu.Item>
+                            <Menu.Item key="10" onClick={() => handleClick('game-components')}>
+                                Game Component
+                            </Menu.Item>
+                            <Menu.Item key="11" onClick={() => handleClick('instruction-card')}>
+                                Instruction Card
+                            </Menu.Item>
+                        </Menu.SubMenu>
+                        <Menu.Item key="12">
                             <Link href="/tutorial">Tutorial</Link>
                         </Menu.Item>
-                        <Menu.Item key="4">
+                        <Menu.Item key="13">
                             <Link href="/gamescore">Game Score</Link>
                         </Menu.Item>
-                        <Menu.Item key="5">
+                        <Menu.Item key="14">
                             <Link href="/leaderboard">Leaderboard</Link>
                         </Menu.Item>
-                        <Menu.Item key="6">
+                        <Menu.Item key="15">
                             <Link href="/faq">FAQ</Link>
                         </Menu.Item>
                     </Menu>

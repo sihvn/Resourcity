@@ -18,16 +18,36 @@ export default function Rules() {
     return (
         <>
             <Navbar />
-            <GameSetup id="game-setup" />
-            <PlayerAction />
-            <FormingLoops />
-            <FarmActions id="farm-actions" />
-            <FarmExamples />
-            <CrisisCards />
-            <HuatCards />
-            <Superpowers />
-            <GameComponent />
-            <InstructionCards />
+            <div id="game-setup">
+                <GameSetup />
+            </div>
+            <div id="player-actions">
+                <PlayerAction />
+            </div>
+            <div id="forming-loops">
+                <FormingLoops />
+            </div>
+            <div id="farm-actions">
+                <FarmActions />
+            </div>
+            <div id="farm-examples">
+                <FarmExamples />
+            </div>
+            <div id="crisis-cards">
+                <CrisisCards />
+            </div>
+            <div id="huat-cards">
+                <HuatCards />
+            </div>
+            <div id="super-powers">
+                <Superpowers />
+            </div>
+            <div id="game-components">
+                <GameComponent />
+            </div>
+            <div id="instruction-card">
+                <InstructionCards />
+            </div>
             <Footer1 />
         </>
     );
