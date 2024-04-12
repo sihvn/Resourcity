@@ -19,41 +19,6 @@ const MenuBar = (e) => {
         }
     };
 
-    const menu = (
-        <Menu>
-            <Menu.Item key="16" onClick={(e) => handleClick('game-setup')}>
-                <div>Game Setup</div>
-            </Menu.Item>
-            <Menu.Item key="17" onClick={(e) => handleClick('player-actions')}>
-                <div>Player Actions</div>
-            </Menu.Item>
-            <Menu.Item key="18" onClick={(e) => handleClick('forming-loops')}>
-                <div>Forming Loops</div>
-            </Menu.Item>
-            <Menu.Item key="19" onClick={(e) => handleClick('farm-actions')}>
-                <div>Farm Actions</div>
-            </Menu.Item>
-            <Menu.Item key="20" onClick={(e) => handleClick('farm-examples')}>
-                <div>Farm Examples</div>
-            </Menu.Item>
-            <Menu.Item key="21" onClick={(e) => handleClick('crisis-cards')}>
-                <div>Crisis Cards</div>
-            </Menu.Item>
-            <Menu.Item key="22" onClick={(e) => handleClick('huat-cards')}>
-                <div>Huat Cards</div>
-            </Menu.Item>
-            <Menu.Item key="23" onClick={(e) => handleClick('super-powers')}>
-                <div>Superpowers</div>
-            </Menu.Item>
-            <Menu.Item key="24" onClick={(e) => handleClick('game-components')}>
-                <div>Game Component</div>
-            </Menu.Item>
-            <Menu.Item key="25" onClick={(e) => handleClick('instruction-card')}>
-                <div>Instruction Card</div>
-            </Menu.Item>
-        </Menu>
-
-    );
     const items = [{
         label: 'Game Setup',
         key: '16',
