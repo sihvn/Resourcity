@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { Layout, Drawer, Button, Menu, theme } from 'antd';
+import { useRouter } from 'next/navigation';
 
 const { Header, Content, Footer, Sider } = Layout;
 const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
@@ -14,6 +15,7 @@ const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].
 );
 
 const BaseTemplate = ({ children }) => {
+    const router = useRouter();
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
@@ -33,7 +35,10 @@ const BaseTemplate = ({ children }) => {
                 behavior: 'smooth'
             });
         }
+        router.push(id);
     }
+
+
 
     return (
         <Layout>
@@ -71,34 +76,34 @@ const BaseTemplate = ({ children }) => {
                             <Link href="/">Home</Link>
                         </Menu.Item>
                         <Menu.SubMenu key="gameRules" title="Game Rules">
-                            <Menu.Item key="2" onClick={() => handleClick('game-setup')}>
+                            <Menu.Item key="/rules#game-setup" onClick={() => handleClick('/rules#game-setup')}>
                                 Game Setup
                             </Menu.Item>
-                            <Menu.Item key="3" onClick={() => handleClick('player-actions')}>
+                            <Menu.Item key="/rules#player-actions" onClick={() => handleClick('/rules#player-actions')}>
                                 Player Actions
                             </Menu.Item>
-                            <Menu.Item key="4" onClick={() => handleClick('forming-loops')}>
+                            <Menu.Item key="4" onClick={() => handleClick('/rules#forming-loops')}>
                                 Forming Loops
                             </Menu.Item>
-                            <Menu.Item key="5" onClick={() => handleClick('farm-actions')}>
+                            <Menu.Item key="5" onClick={() => handleClick('/rules#farm-actions')}>
                                 Farm Actions
                             </Menu.Item>
-                            <Menu.Item key="6" onClick={() => handleClick('farm-examples')}>
+                            <Menu.Item key="6" onClick={() => handleClick('/rules#farm-examples')}>
                                 Farm Examples
                             </Menu.Item>
-                            <Menu.Item key="7" onClick={() => handleClick('crisis-cards')}>
+                            <Menu.Item key="7" onClick={() => handleClick('/rules#crisis-cards')}>
                                 Crisis Cards
                             </Menu.Item>
-                            <Menu.Item key="8" onClick={() => handleClick('huat-cards')}>
+                            <Menu.Item key="8" onClick={() => handleClick('/rules#huat-cards')}>
                                 Huat Cards
                             </Menu.Item>
-                            <Menu.Item key="9" onClick={() => handleClick('super-powers')}>
+                            <Menu.Item key="9" onClick={() => handleClick('/rules#super-powers')}>
                                 Superpowers
                             </Menu.Item>
-                            <Menu.Item key="10" onClick={() => handleClick('game-components')}>
+                            <Menu.Item key="10" onClick={() => handleClick('/rules#game-components')}>
                                 Game Component
                             </Menu.Item>
-                            <Menu.Item key="11" onClick={() => handleClick('instruction-card')}>
+                            <Menu.Item key="11" onClick={() => handleClick('/rules#instruction-card')}>
                                 Instruction Card
                             </Menu.Item>
                         </Menu.SubMenu>
