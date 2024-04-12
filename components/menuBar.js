@@ -9,8 +9,9 @@ const MenuBar = (e) => {
     const router = useRouter()
 
     const handleClick = (id) => {
-        router.push('/rules')
+        // router.push('/rules')
         // router.events.on('routeChangeComplete', () => console.log(router.pathname))
+        router.push(id)
         const element = document.getElementById(id);
         console.log(document)
         if (element) {
@@ -28,53 +29,53 @@ const MenuBar = (e) => {
     const items = [{
         label: 'Game Setup',
         key: '16',
-        onClick: () => handleClick('game-setup'),
+        onClick: () => handleClick('/rules#game-setup'),
     },
 
     {
         label: 'Player Actions',
         key: '17',
-        onClick: () => handleClick('player-actions'),
+        onClick: () => handleClick('/rules#player-actions'),
     },
     {
         label: 'Forming Loops',
         key: '18',
-        onClick: () => handleClick('forming-loops'),
+        onClick: () => handleClick('/rules#forming-loops'),
     },
     {
         label: 'Farm Actions',
         key: '19',
-        onClick: () => handleClick('farm-actions'),
+        onClick: () => handleClick('/rules#farm-actions'),
     },
     {
         label: 'Farm Examples',
         key: '20',
-        onClick: () => handleClick('farm-examples'),
+        onClick: () => handleClick('/rules#farm-examples'),
     },
     {
         label: 'Crisis Cards',
         key: '21',
-        onClick: () => handleClick('crisis-cards'),
+        onClick: () => handleClick('/rules#crisis-cards'),
     },
     {
         label: 'Huat Cards',
         key: '22',
-        onClick: () => handleClick('huat-cards'),
+        onClick: () => handleClick('/rules#huat-cards'),
     },
     {
         label: 'Superpowers',
         key: '23',
-        onClick: () => handleClick('super-powers'),
+        onClick: () => handleClick('/rules#super-powers'),
     },
     {
         label: 'Game Component',
         key: '24',
-        onClick: () => handleClick('game-components'),
+        onClick: () => handleClick('/rules#game-components'),
     },
     {
         label: 'Instruction Card',
         key: '25',
-        onClick: () => handleClick('instruction-card'),
+        onClick: () => handleClick('/rules#instruction-card'),
     },
     ];
     return (
