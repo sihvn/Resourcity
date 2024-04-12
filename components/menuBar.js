@@ -1,12 +1,18 @@
 // MenuBar.js
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'
 import { Dropdown, Menu, Layout } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 const { Header, Content, Footer, Sider } = Layout;
 
 const MenuBar = (e) => {
+    const router = useRouter()
+
     const handleClick = (id) => {
+        router.push('/rules')
+        // router.events.on('routeChangeComplete', () => console.log(router.pathname))
         const element = document.getElementById(id);
+        console.log(document)
         if (element) {
             const headerOffset = 86;
             const elementPosition = element.getBoundingClientRect().top;
@@ -80,13 +86,18 @@ const MenuBar = (e) => {
                     </a>
                     <div className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-8 md:flex-row md:mt-0" id="navbar-sticky">
                         <Link href="/" className="hover:text-gray-500 cursor-pointer">Home</Link>
-                        <Dropdown menu={{ items: items }} trigger={['click']}>
+                        {/* <Dropdown menu={{ items: items }} trigger={['click']}>
                             <Link href="/rules" passHref>
                                 <button className="hover:text-gray-500 cursor-pointer">
                                     Game Rules <DownOutlined />
                                 </button>
                             </Link>
 
+                        </Dropdown> */}
+                        <Dropdown menu={{ items: items }} trigger={['click']}>
+                            <a className="hover:text-gray-500 cursor-pointer">
+                                Game Rules <DownOutlined />
+                            </a>
                         </Dropdown>
                         <Link href="/tutorial" className="hover:text-gray-500 cursor-pointer">Tutorial</Link>
                         <Link href="/gamescore" className="hover:text-gray-500 cursor-pointer">Game Score</Link>
