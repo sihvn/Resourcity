@@ -81,9 +81,12 @@ const MenuBar = (e) => {
                     <div className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-8 md:flex-row md:mt-0" id="navbar-sticky">
                         <Link href="/" className="hover:text-gray-500 cursor-pointer">Home</Link>
                         <Dropdown menu={{ items: items }} trigger={['click']}>
-                            <div className="hover:text-gray-500 cursor-pointer">
-                                Game Rules <DownOutlined />
-                            </div>
+                            <Link href="/rules" passHref>
+                                <button className="hover:text-gray-500 cursor-pointer">
+                                    Game Rules <DownOutlined />
+                                </button>
+                            </Link>
+
                         </Dropdown>
                         <Link href="/tutorial" className="hover:text-gray-500 cursor-pointer">Tutorial</Link>
                         <Link href="/gamescore" className="hover:text-gray-500 cursor-pointer">Game Score</Link>
