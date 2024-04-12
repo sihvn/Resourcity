@@ -4,7 +4,8 @@ const GameSetup = () => {
     return (
         <div className="">
             <div className="mb-2 text-center ">
-                <h1 className="text-4xl font-bold mb-2 py-4 bg-teal-100">Set Up </h1>
+
+                <h1 className="text-4xl font-bold mb-2 py-4 bg-teal-100 mt-32">Set Up </h1>
                 <p className="text-lg">To begin, you will need to set up the game. </p>
             </div>
             <div className="flex items-center justify-center mb-10 mt-10 ">
