@@ -41,9 +41,12 @@ export default function NewGame() {
     const [newScore, setNewScore] = useState(0);
 
     // for use in the formula description
-    const tr = Form.useWatch('totalResources', form);
-    const mxr = Form.useWatch('maximumResources', form);
-    const mir = Form.useWatch('minimumResources', form);
+    var total;
+    const fuel = Form.useWatch('fuelResources', form);
+    const water = Form.useWatch('waterResources', form);
+    const food = Form.useWatch('foodResources', form);
+    total = fuel + water + food;
+
     const maximumResources = Math.max(form.getFieldsValue().fuelResources, form.getFieldsValue().waterResources, form.getFieldsValue().foodResources);
     const minimumResources = Math.min(form.getFieldsValue().fuelResources, form.getFieldsValue().waterResources, form.getFieldsValue().foodResources);
     const nof = Form.useWatch('numberOfFarms', form);
@@ -51,7 +54,7 @@ export default function NewGame() {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const calculateSum = () => {
-        const newScore = (form.getFieldsValue().totalResources -
+        const newScore = (total -
             (Math.max(form.getFieldsValue().fuelResources, form.getFieldsValue().waterResources, form.getFieldsValue().foodResources)
                 - Math.min(form.getFieldsValue().fuelResources, form.getFieldsValue().waterResources, form.getFieldsValue().foodResources))
             + form.getFieldsValue().numberOfFarms);
@@ -61,7 +64,7 @@ export default function NewGame() {
     const onFinish = async (values) => {
         // Add the current date to the form data
         const currentDate = new Date();
-        const newScore = (Number(totalResources.value) - (maximumResources - minimumResources) + Number(numberOfFarms.value));
+        const newScore = (Number(total) - (maximumResources - minimumResources) + Number(numberOfFarms.value));
         const added = await addData(values.name, newScore, currentDate, values.crisis1, values.crisis2, values.crisis3, values.crisis4);
         setIsModalVisible(true);
         console.log('Success:', values, currentDate);
@@ -107,20 +110,11 @@ export default function NewGame() {
                     <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter a name' }]}>
                         <Input />
                     </Form.Item>
-                    <Form.Item name="totalResources" label="Total Resources" rules={[
-                        {
-                            pattern: new RegExp(/^[0-9]+$/),
-                            required: true,
-                            message: 'Please enter a number above 0 for Total Resources'
-                        }
-                    ]}>
-                        <InputNumber />
-                    </Form.Item>
                     <Form.Item name="fuelResources" label="Number of Fuel Tokens" rules={[
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
-                            message: 'Please enter a number above 0 for Maximum Resources'
+                            message: 'Please enter a number above 0 for Fuel Resources'
                         }]
                     }>
                         <InputNumber />
@@ -129,7 +123,7 @@ export default function NewGame() {
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
-                            message: 'Please enter a number above 0 for Total Resources'
+                            message: 'Please enter a number above 0 for Water Resources'
                         }]
                     }>
                         <InputNumber />
@@ -138,7 +132,7 @@ export default function NewGame() {
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
-                            message: 'Please enter a number above 0 for Total Resources'
+                            message: 'Please enter a number above 0 for Food Resources'
                         }]
                     }>
                         <InputNumber />
@@ -147,7 +141,7 @@ export default function NewGame() {
                         {
                             pattern: new RegExp(/^[0-9]+$/),
                             required: true,
-                            message: 'Please enter a number above 0 for Total Resources'
+                            message: 'Please enter a number above 0 for Urban City Score'
                         }]
                     }>
                         <InputNumber />
@@ -177,7 +171,7 @@ export default function NewGame() {
                 <span className='text-center pr-4 text-gray-700'>Urban City Score: Total number of tiles connected to Farms on the board. Remove all road tiles that are not connected to Farms from the board. The remaining number of tiles will be your Urban City Score.</span>
             </h2>
             <h2 className='flex justify-center px-6 py-6'>
-                <span className='text-center pr-4 text-gray-700'>Formula: Total Resource <b>[{tr}]</b>  - (Max Resource <b>[{maximumResources}]</b> - Min Resource <b>[{minimumResources}]</b>) + Urban City Score<b>[{nof}]</b> = <b>{newScore}</b></span>
+                <span className='text-center pr-4 text-gray-700'>Formula: Total Resources <b>[{total}]</b>  - (Max Resource <b>[{maximumResources}]</b> - Min Resource <b>[{minimumResources}]</b>) + Urban City Score<b>[{nof}]</b> = <b>{newScore}</b></span>
             </h2>
             <Footer1 />
         </>
