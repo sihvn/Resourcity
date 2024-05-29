@@ -48,7 +48,8 @@ const BaseTemplate = ({ children }) => {
                     background: colorBgContainer,
                     display: 'flex', // Add flex display to align items horizontally
                     position: 'fixed',
-                    width: '100%'
+                    width: '100%',
+                    alignItems: 'center', // Align items vertically
                 }}
             >
                 <Button
@@ -60,7 +61,7 @@ const BaseTemplate = ({ children }) => {
                         width: 64,
                         height: 64,
                     }} />
-                <img src="/Resourcity/images/logo.png" className="h-16" />
+                <img src="/Resourcity/images/logo.png" className="h-10" />
 
             </Header>
             <Content style={{ paddingTop: 32 }}></Content>

@@ -10,8 +10,9 @@ const MenuBar = (e) => {
 
     const handleClick = (id) => {
         // router.push('/rules')
-        // router.events.on('routeChangeComplete', () => console.log(router.pathname))
         router.push(id)
+        // router.events.on('routeChangeComplete', () => console.log(router.pathname))
+        // router.onRouteChangeStart('./rules')
         const element = document.getElementById(id);
         console.log(document)
         if (element) {
@@ -26,88 +27,108 @@ const MenuBar = (e) => {
         }
     };
 
-    const items = [{
+    const subItems = [{
         label: 'Game Setup',
-        key: '16',
+        key: 'game-setup',
         onClick: () => handleClick('/rules#game-setup'),
     },
-
     {
         label: 'Player Actions',
-        key: '17',
+        key: 'player-actions',
         onClick: () => handleClick('/rules#player-actions'),
     },
     {
         label: 'Forming Loops',
-        key: '18',
+        key: 'forming-loops',
         onClick: () => handleClick('/rules#forming-loops'),
     },
     {
         label: 'Farm Actions',
-        key: '19',
+        key: 'farm-actions',
         onClick: () => handleClick('/rules#farm-actions'),
     },
     {
         label: 'Farm Examples',
-        key: '20',
+        key: 'farm-examples',
         onClick: () => handleClick('/rules#farm-examples'),
     },
     {
         label: 'Crisis Cards',
-        key: '21',
+        key: 'crisis-cards',
         onClick: () => handleClick('/rules#crisis-cards'),
     },
     {
         label: 'Huat Cards',
-        key: '22',
+        key: 'huat-cards',
         onClick: () => handleClick('/rules#huat-cards'),
     },
     {
         label: 'Superpowers',
-        key: '23',
+        key: 'super-powers',
         onClick: () => handleClick('/rules#super-powers'),
     },
     {
         label: 'Game Component',
-        key: '24',
+        key: 'game-components',
         onClick: () => handleClick('/rules#game-components'),
     },
     {
         label: 'Instruction Card',
-        key: '25',
+        key: 'instruction-card',
         onClick: () => handleClick('/rules#instruction-card'),
     },
     ];
-    return (
-        <div>
-            <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 mb-64">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
-                    <a className="items-center rtl:space-x-reverse">
-                        <img src="/Resourcity/images/logo.png" className="h-24" />
-                    </a>
-                    <div className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-8 md:flex-row md:mt-0" id="navbar-sticky">
-                        <Link href="/" className="hover:text-gray-500 cursor-pointer">Home</Link>
-                        {/* <Dropdown menu={{ items: items }} trigger={['click']}>
-                            <Link href="/rules" passHref>
-                                <button className="hover:text-gray-500 cursor-pointer">
-                                    Game Rules <DownOutlined />
-                                </button>
-                            </Link>
 
-                        </Dropdown> */}
-                        <Dropdown menu={{ items: items }} trigger={['click']}>
-                            <a className="hover:text-gray-500 cursor-pointer">
-                                Game Rules <DownOutlined />
-                            </a>
-                        </Dropdown>
-                        <Link href="/tutorial" className="hover:text-gray-500 cursor-pointer">Tutorial</Link>
-                        <Link href="/gamescore" className="hover:text-gray-500 cursor-pointer">Game Score</Link>
-                        <Link href="/leaderboard" className="hover:text-gray-500 cursor-pointer">Leaderboard</Link>
-                        <Link href="/faq" className="hover:text-gray-500 cursor-pointer">FAQ</Link>
-                    </div>
-                </div>
-            </nav>
-        </div>
+    const items = [{
+        label: 'Home',
+        key: 'home',
+        onClick: () => handleClick('/'),
+    },
+
+    {
+        label: 'Game Rules',
+        key: 'rules',
+        children: subItems
+    },
+    {
+        label: 'Tutorial',
+        key: 'tutorial',
+        onClick: () => handleClick('/tutorial'),
+    },
+    {
+        label: 'Game Score',
+        key: 'gamescore',
+        onClick: () => handleClick('/gamescore'),
+    },
+    {
+        label: 'Leaderboard',
+        key: 'leaderboard',
+        onClick: () => handleClick('/leaderboard'),
+    },
+    {
+        label: 'FAQ',
+        key: 'faq',
+        onClick: () => handleClick('/faq'),
+    },
+    ];
+
+
+
+    return (
+        <Header className="bg-white " style={{
+            position: 'sticky',
+            top: 0,
+            zIndex: 1,
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+        }}>
+            <a className="h-10">
+                <img src="/Resourcity/images/logo.png" className="h-10" />
+            </a>
+            <Menu items={items} mode="horizontal" style={{ display: 'flex', justifyContent: 'flex-end', flex: 1, minWidth: 0 }} >
+            </Menu>
+        </Header >
 
 
     )

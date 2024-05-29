@@ -20,9 +20,9 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div>
+        <>
             {isMobile ? <BaseTemplate /> : <MenuBar />}
-        </div>
+        </>
     );
 };
 
