@@ -21,25 +21,25 @@ const FormingLoops = () => {
                     </ul>
 
 
-                    <div class="flex flex-col justify-center items-center mb-4 md:mb-0 py-8">
-                        <img src="/Resourcity/images/formingloop3.png" class="w-64 h-auto object-cover" alt="Image 1" />
-                        <img src="/Resourcity/images/formingloop2.png" class="w-64 h-auto object-cover mt-2" alt="Image 2" />
+                    <div className="flex flex-col justify-center items-center mb-4 md:mb-0 py-8">
+                        <img src="/Resourcity/images/formingloop3.png" className="w-64 h-auto object-cover" alt="Image 1" />
+                        <img src="/Resourcity/images/formingloop2.png" className="w-64 h-auto object-cover mt-2" alt="Image 2" />
                     </div>
 
 
-                    <div class="flex flex-col md:flex-row justify-center py-8">
-                        <div class="flex flex-col items-center mb-4 md:mb-0 px-8">
-                            <img src="/Resourcity/images/formingloop4.png" class="w-64 h-auto object-cover" alt="Image 3" />
-                            <img src="/Resourcity/images/formingloop1.png" class="w-64 h-auto object-cover mt-2" alt="Image 4" />
-                            <p class="text-center mt-2 px-8">Water Catchments must be placed</p>
+                    <div className="flex flex-col md:flex-row justify-center py-8">
+                        <div className="flex flex-col items-center mb-4 md:mb-0 px-8">
+                            <img src="/Resourcity/images/formingloop4.png" className="w-64 h-auto object-cover" alt="Image 3" />
+                            <img src="/Resourcity/images/formingloop1.png" className="w-64 h-auto object-cover mt-2" alt="Image 4" />
+                            <p className="text-center mt-2 px-8">Water Catchments must be placed</p>
                             <p>adjacent to a Green Space.</p>
 
                         </div>
 
-                        <div class="flex flex-col items-center px-8">
-                            <img src="/Resourcity/images/formingloop5.png" class="w-64 h-auto object-cover" alt="Image 5" />
-                            <img src="/Resourcity/images/formingloop2.png" class="w-64 h-auto object-cover mt-2" alt="Image 6" />
-                            <p class="text-center mt-2 px-8">Farms can be any shape </p>
+                        <div className="flex flex-col items-center px-8">
+                            <img src="/Resourcity/images/formingloop5.png" className="w-64 h-auto object-cover" alt="Image 5" />
+                            <img src="/Resourcity/images/formingloop2.png" className="w-64 h-auto object-cover mt-2" alt="Image 6" />
+                            <p className="text-center mt-2 px-8">Farms can be any shape </p>
                             <p> (ie. need not be a square).</p>
                         </div>
                     </div>

@@ -15,8 +15,8 @@ export default function Tutorial() {
                     width='1280'
                     height='720'
                     src="https://www.youtube.com/embed/4U9iDY_4Tag"
-                    frameborder="0"
-                    allowfullscreen
+                    frameBorder="0"
+                    allowFullScreen
                 />
             </div>
             <Footer1 />

@@ -5,6 +5,7 @@ import GameBackground from '../components/gamebackground';
 import Navbar from '../components/navbar';
 import Footer1 from '../components/footer';
 import { useEffect, useState } from 'react';
+import { Layout } from 'antd';
 
 export default function Page() {
     const [dimensions, setDimensions] = useState({
@@ -29,21 +30,21 @@ export default function Page() {
     // }, []);
 
     return (
-        <>
+        <Layout>
             <Navbar />
             <div className='flex items-center justify-center'>
                 <iframe
                     style={{ width: dimensions.width, height: dimensions.height }}
 
                     src="https://www.youtube.com/embed/8UWY_CAm3x8"
-                    frameborder="0"
-                    allowfullscreen
+                    frameBorder="0"
+                    allowFullScreen
                 />
             </div>
             <GameBackground />
             <Footer1 />
 
-        </>
+        </Layout>
 
 
     );
