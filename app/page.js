@@ -35,8 +35,7 @@ export default function Page() {
             <div className='flex items-center justify-center'>
                 <iframe
                     style={{ width: dimensions.width, height: dimensions.height }}
-
-                    src="https://www.youtube.com/embed/8UWY_CAm3x8"
+                    src="https://www.youtube.com/embed/KpgShENMN90"
                     frameBorder="0"
                     allowFullScreen
                 />
