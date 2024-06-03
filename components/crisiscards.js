@@ -28,7 +28,7 @@ const CrisisCards = () => {
     };
 
     return (
-        <div className="">
+        <div className="pt-16">
             <div className="mb-2 text-center ">
                 <h1 className="text-4xl font-bold mb-4 py-6 bg-orange-100">Crisis Cards </h1>
                 <br></br>

@@ -2,7 +2,7 @@
 
 const FormingLoops = () => {
     return (
-        <div className="">
+        <div className="pt-16">
             <h1 className="text-4xl font-bold text-center mb-4 bg-yellow-100 py-6">Forming Loops - Farm </h1>
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5">
 

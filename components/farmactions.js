@@ -2,7 +2,7 @@
 
 const FarmActions = () => {
     return (
-        <div className="">
+        <div className="pt-16">
             <h1 className="text-4xl font-bold mb-4 text-center bg-yellow-100 py-6">Farming</h1>
             <p className="text-lg text-center" >Farming takes place in 3 stages: Plant, Grow, Harvest.</p>
             <br></br>

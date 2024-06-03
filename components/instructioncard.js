@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const InstructionCards = () => {
     return (
-        <div>
+        <div className='pt-16'>
             <h1 className="text-4xl text-center font-bold py-6 bg-pink-100">Instruction Card</h1>
             <div className="flex flex-col lg:flex-row">
                 <div className="flex justify-center items-center py-5 px-8">

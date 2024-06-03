@@ -2,7 +2,7 @@
 
 const FarmExamples = () => {
     return (
-        <div>
+        <div className="pt-16">
             <h1 className="text-4xl text-center font-bold py-8 px-8 bg-yellow-100">Farm Examples</h1>
             <div className="flex items-center flex-col justify-center">
                 <img src="/Resourcity/images/farmexamples1.png" className="w-auto lg:w-1/3 h-full py-8 px-4" />

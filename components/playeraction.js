@@ -4,7 +4,7 @@ import Link from 'next/link';
 const PlayerAction = () => {
     return (
 
-        <div className="">
+        <div className="pt-16">
             <h1 className="text-4xl font-bold mb-4 text-center bg-purple-100 py-4">During your turn </h1>
             <div className="flex flex-wrap justify-center mt-10 mb-10 mx-5">
                 <div className="text-lg block max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow ">

@@ -14,41 +14,46 @@ import FarmExamples from '../../components/farmexamples';
 import InstructionCards from '../../components/instructioncard';
 import Footer1 from '../../components/footer';
 
+import { Layout } from 'antd';
+const { Content } = Layout;
+
 export default function Rules() {
     return (
-        <>
+        <Layout>
             <Navbar />
-            <div id="game-setup">
-                <GameSetup />
-            </div>
-            <div id="player-actions">
-                <PlayerAction />
-            </div>
-            <div id="forming-loops">
-                <FormingLoops />
-            </div>
-            <div id="farm-actions">
-                <FarmActions />
-            </div>
-            <div id="farm-examples">
-                <FarmExamples />
-            </div>
-            <div id="crisis-cards">
-                <CrisisCards />
-            </div>
-            <div id="huat-cards">
-                <HuatCards />
-            </div>
-            <div id="super-powers">
-                <Superpowers />
-            </div>
-            <div id="game-components">
-                <GameComponent />
-            </div>
-            <div id="instruction-card">
-                <InstructionCards />
-            </div>
+            <Content>
+                <div id="game-setup">
+                    <GameSetup />
+                </div>
+                <div id="player-actions">
+                    <PlayerAction />
+                </div>
+                <div id="forming-loops">
+                    <FormingLoops />
+                </div>
+                <div id="farm-actions">
+                    <FarmActions />
+                </div>
+                <div id="farm-examples">
+                    <FarmExamples />
+                </div>
+                <div id="crisis-cards">
+                    <CrisisCards />
+                </div>
+                <div id="huat-cards">
+                    <HuatCards />
+                </div>
+                <div id="super-powers">
+                    <Superpowers />
+                </div>
+                <div id="game-components">
+                    <GameComponent />
+                </div>
+                <div id="instruction-card">
+                    <InstructionCards />
+                </div>
+            </Content>
             <Footer1 />
-        </>
+        </Layout>
     );
 }
