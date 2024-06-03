@@ -27,7 +27,7 @@ const PlayerAction = () => {
             </div>
             <div className="flex flex-wrap justify-center mt-10 mx-5">
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                    <img className="rounded-t-lg" src="/Resourcity/images/playermove1.png" alt="" />
+                    <img src="/Resourcity/images/playermove1.png" alt="" style={{ width: '80%', height: 'auto' }} />
                     <div className="p-5">
                         <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Move</p>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Move to an adjacent tile, following the road.You cannot move to an adjacent tile if its road is disconnected from your current tile. Moving by 1 tile counts as 1 Action. A maximum of 3 players can be on 1 tile together. </p>
@@ -35,7 +35,7 @@ const PlayerAction = () => {
                     </div>
                 </div>
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                    <img className="rounded-t-lg" src="/Resourcity/images/playermove2.png" alt="" />
+                    <img src="/Resourcity/images/playermove2.png" alt="" style={{ width: '80%', height: 'auto' }} />
                     <div className="p-5">
                         <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Rotate</p>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Rotate tile you ore standing on, or any adjacent tile by 90 degrees. </p>
@@ -43,7 +43,7 @@ const PlayerAction = () => {
                     </div>
                 </div>
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                    <img className="rounded-t-lg" src="/Resourcity/images/playermove3.png" alt="" />
+                    <img src="/Resourcity/images/playermove3.png" alt="" style={{ width: '80%', height: 'auto' }} />
                     <div className="p-5">
                         <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Replace</p>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400"> Choose a tile from your hand to Replace the tile you are standing on, or any adjacent tile (including Community Centre tiles).  </p>
@@ -59,7 +59,7 @@ const PlayerAction = () => {
 
             <div className="flex flex-wrap justify-center mt-10 mx-5 mb-8">
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                    <img className="rounded-t-lg" src="/Resourcity/images/placeholder.png" alt="" />
+                    <img src="/Resourcity/images/placeholder.png" alt="" style={{ width: '80%', height: 'auto' }} />
                     <div className="p-5">
                         <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Teleport</p>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">If standing on a Community Centre, you can Teleport your player token to any other Community Centre.  </p>
@@ -67,7 +67,7 @@ const PlayerAction = () => {
                     </div>
                 </div>
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                    <img className="rounded-t-lg" src="/Resourcity/images/placeholder.png" alt="" />
+                    <img src="/Resourcity/images/placeholder.png" alt="" style={{ width: '80%', height: 'auto' }} />
                     <div className="p-5">
                         <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Use Superpower </p>
                         <p className="font-bold mb-3">Cost: None</p>
@@ -76,7 +76,7 @@ const PlayerAction = () => {
                     </div>
                 </div>
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                    <img className="rounded-t-lg" src="/Resourcity/images/placeholder.png" alt="" />
+                    <img src="/Resourcity/images/placeholder.png" alt="" style={{ width: '80%', height: 'auto' }} />
                     <div className="p-5">
                         <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">Farm</p>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Plant, Grow, Harvest</p>

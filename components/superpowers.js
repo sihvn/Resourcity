@@ -36,11 +36,11 @@ const Superpowers = () => {
                     {/* <h1 className="text-4xl font-bold mb-4 text-center">{cardsData[currentCardIndex].title}</h1> */}
                     <div className="flex justify-center">
                         <div className="flex justify-between mt-4">
-                            <button onClick={prevCard} className="px-4 py-2 bg-white text-black font-bold text-5xl rounded-md">{'<'}</button>
+                            <button onClick={prevCard} className="px-1 py-1 bg-white text-black font-bold text-s rounded-md">{'<'}</button>
                         </div>
-                        <img src={cardsData[currentCardIndex].image} alt={cardsData[currentCardIndex].title} className="w-full rounded-lg mb-4" />
+                        <img src={cardsData[currentCardIndex].image} alt={cardsData[currentCardIndex].title} className="w-full rounded-lg" />
                         <div className="flex justify-between mt-4">
-                            <button onClick={nextCard} className="px-4 py-2 bg-white text-black font-bold  text-5xl rounded-md">{'>'}</button>
+                            <button onClick={nextCard} className="px-1 py-1 bg-white text-black font-bold text-s rounded-md">{'>'}</button>
                         </div>
                     </div>
                 </div>

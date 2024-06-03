@@ -52,7 +52,7 @@ const GameSetup = () => {
                 </div>
             </div>
             <div className="flex justify-center">
-                <img src="/Resourcity/images/TilesDiagram.png" alt="Shuffle Tiles" className="w-auto h-auto px-4 lg:w-1/2" />
+                <img src="/Resourcity/images/TilesDiagram.png" alt="Shuffle Tiles" style={{ width: '80%', height: 'auto' }} />
             </div>
             <div className="flex flex-wrap justify-center mt-10 mx-5">
                 <div className="text-lg block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow ">

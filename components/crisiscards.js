@@ -40,11 +40,11 @@ const CrisisCards = () => {
                     {/* <h1 className="text-4xl font-bold mb-4 text-center">{CrisisCardsData[currentCardIndex].title}</h1> */}
                     <div className="flex justify-center">
                         <div className="flex justify-between mt-4">
-                            <button onClick={prevCard} className="px-4 py-2 bg-white text-black font-bold text-5xl rounded-md">{'<'}</button>
+                            <button onClick={prevCard} className="px-1 py-1 bg-white text-black font-bold text-xs rounded-md">{'<'}</button>
                         </div>
-                        <img src={CrisisCardsData[currentCardIndex].image} alt={CrisisCardsData[currentCardIndex].title} className="w-full rounded-lg mb-4" />
+                        <img src={CrisisCardsData[currentCardIndex].image} alt={CrisisCardsData[currentCardIndex].title} className="w-full px-2 rounded-lg " />
                         <div className="flex justify-between mt-4">
-                            <button onClick={nextCard} className="px-4 py-2 bg-white text-black font-bold  text-5xl rounded-md">{'>'}</button>
+                            <button onClick={nextCard} className="px-1 py-1 bg-white text-black font-bold  text-xs rounded-md">{'>'}</button>
                         </div>
                     </div>
                 </div>
