@@ -10,6 +10,12 @@ import { Layout } from 'antd';
 
 //TODO: fix winodw not defined error with https://stackoverflow.com/questions/75692116/next-js-13-window-is-not-defined
 function getWindowDimensions() {
+    if (typeof window === 'undefined') {
+        return {
+            width: 0,
+            height: 0
+        };
+    }
     const { innerWidth: width, innerHeight: height } = window;
     return {
         width,
@@ -34,13 +40,14 @@ function useWindowDimensions() {
 export default function Tutorial() {
 
     const { height, width } = useWindowDimensions();
+    const isMobile = width <= 768;
 
     return (
         <Layout>
             <Navbar />
             <div className='flex items-center justify-center'>
                 <iframe
-                    style={{ width: width, height: height * 0.4 }}
+                    style={{ width: width, height: isMobile ? height * 0.4 : height }}
                     src="https://www.youtube.com/embed/4U9iDY_4Tag"
                     frameBorder="0"
                     allowFullScreen
