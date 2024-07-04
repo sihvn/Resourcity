@@ -1,20 +1,25 @@
 "use client";
 
 import BaseTemplate from '../components/baseTemplate';
-import GameBackground from '../components/gamebackground';
 import Navbar from '../components/navbar';
 import Footer1 from '../components/footer';
 import { useEffect, useState } from 'react';
 import { Layout } from 'antd';
+import dynamic from 'next/dynamic';
 
 //TODO: fix winodw not defined error with https://stackoverflow.com/questions/75692116/next-js-13-window-is-not-defined
+const GameBackground = dynamic(
+    () => import('../components/gamebackground'),
+    { ssr: false }
+);
 function getWindowDimensions() {
-    if (typeof window === 'undefined') {
-        return {
-            width: '1280',
-            height: '720'
-        };
-    }
+    // if (typeof window === 'undefined') {
+    //     return {
+    //         width: '1280',
+    //         height: '720'
+    //     };
+    // }
+
     const { innerWidth: width, innerHeight: height } = window;
     return {
         width,

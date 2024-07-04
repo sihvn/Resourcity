@@ -3,19 +3,25 @@
 import Link from 'next/link'
 import BaseTemplate from '../../components/baseTemplate';
 import Navbar from '../../components/navbar';
-import Footer1 from '../../components/footer';
+import dynamic from 'next/dynamic';
 
 import { useEffect, useState } from 'react';
 import { Layout } from 'antd';
 
+const Footer1 = dynamic(
+    () => import('../../components/footer'),
+    { ssr: false }
+);
 //TODO: fix winodw not defined error with https://stackoverflow.com/questions/75692116/next-js-13-window-is-not-defined
 function getWindowDimensions() {
-    if (typeof window === 'undefined') {
-        return {
-            width: '1280',
-            height: '720'
-        };
-    }
+    // if (typeof window === 'undefined') {
+    //     return {
+    //         width: '1280',
+    //         height: '720'
+    //     };
+    // }
+
+
     const { innerWidth: width, innerHeight: height } = window;
     return {
         width,
