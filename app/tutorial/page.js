@@ -12,8 +12,8 @@ import { Layout } from 'antd';
 function getWindowDimensions() {
     if (typeof window === 'undefined') {
         return {
-            width: '1280',
-            height: '720'
+            width,
+            height
         };
     }
     const { innerWidth: width, innerHeight: height } = window;
