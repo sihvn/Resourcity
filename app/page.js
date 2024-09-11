@@ -9,12 +9,6 @@ import { Layout } from 'antd';
 
 //TODO: fix winodw not defined error with https://stackoverflow.com/questions/75692116/next-js-13-window-is-not-defined
 function getWindowDimensions() {
-    if (typeof window === 'undefined') {
-        return {
-            width: 0,
-            height: 0
-        };
-    }
     const { innerWidth: width, innerHeight: height } = window;
     return {
         width,
