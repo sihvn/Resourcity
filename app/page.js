@@ -5,44 +5,37 @@ import GameBackground from '../components/gamebackground';
 import Navbar from '../components/navbar';
 import Footer1 from '../components/footer';
 import { useEffect, useState } from 'react';
-import { Layout } from 'antd';
+import { Row, Col, Layout } from 'antd';
+import "./globals.css";
 
 export default function Page() {
     const [dimensions, setDimensions] = useState({
-        width: '80%',
-        height: '100%'
+        width: '100%',
+        height: '300px'
     });
-
-    // useEffect(() => {
-    //     const handleResize = () => {
-    //         setDimensions({
-    //             width: '100%',
-    //             height: '100%'
-    //         });
-    //     };
-
-    //     window.addEventListener('resize', handleResize);
-
-    //     // Cleanup event listener on component unmount
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize);
-    //     };
-    // }, []);
 
     return (
         <Layout>
             <Navbar />
-            <div className='flex items-center justify-center'>
-                <iframe
-                    style={{ width: dimensions.width, height: dimensions.height }}
-                    src="https://www.youtube.com/embed/KpgShENMN90"
-                    frameBorder="0"
-                    allowFullScreen
-                />
-            </div>
-            <GameBackground />
-            <Footer1 />
+            <div className="flex flex-col md:flex-row items-center justify-center">
+                {/* YouTube Video */}
+                <div className="md:w-1/2 w-full">
+                    <iframe
+                        className="w-full h-60 md:h-80"
+                        src="https://www.youtube.com/embed/KpgShENMN90"
+                        title="YouTube video"
+                        frameBorder="0"
+                        allowFullScreen
+                    ></iframe>
+                </div>
 
+                {/* Text Content */}
+                <div className="md:w-1/2 w-full">
+                    <GameBackground />
+                </div>
+            </div>
+
+            <Footer1 />
         </Layout>
 
 
