@@ -35,14 +35,13 @@ function useWindowDimensions() {
 export default function Page() {
 
     const { height, width } = useWindowDimensions();
-    const isMobile = width <= 768;
 
     return (
         <Layout>
             <Navbar />
             <div className='flex items-center justify-center'>
                 <iframe
-                    style={{ width: width, height: isMobile ? height * 0.4 : height }}
+                    style={{ width: width, height: height * 0.4 }}
                     src="https://www.youtube.com/embed/KpgShENMN90"
                     frameBorder="0"
                     allowFullScreen
