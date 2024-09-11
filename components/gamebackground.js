@@ -7,7 +7,7 @@ const GameBackground = () => {
             {/* <div className="flex justify-center items-center py-5">
                 <img src="/Resourcity/images/Backgroundimage.png" className="w-9/12 h-full " />
             </div> */}
-            <div className="text-left py-5 px-8 lg:px-52">
+            <div className="text-left py-5 px-8">
                 <h1 className="text-4xl font-bold mb-4 mt-6 bg-pink-100">The city needs your help! </h1>
                 <p className="text-lg">As climate issues and overconsumption worsen around the world, countries have started to keep resources to themselves. Supplies into the city are drastically reduced, which is a major problem for the city that relies heavily on imports to meet daily needs.</p>
 
