@@ -64,7 +64,7 @@ const GameComponent = () => {
                 </div>
             </div>
 
-            <h2 className="text-4xl font-bold text-center py-8">Resouce Tokens</h2>
+            <h2 className="text-4xl font-bold text-center py-8">Resource Tokens</h2>
             <div className="flex flex-wrap justify-center mx-5 mb-16">
                 <div className="flex flex-wrap justify-center">
                     <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 my-2">
